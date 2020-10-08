@@ -1,0 +1,118 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Введите значения в миллиметрах",
+      "horizontalAlignment": "Center",
+      "height": "stretch",
+      "size": "Large"
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Диаметр трубы ",
+              "size": "Large",
+              "horizontalAlignment": "Right"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "Input.Number",
+              "value": 820,
+              "id": "pipe_diameter"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Толщина стенки",
+              "size": "Large",
+              "horizontalAlignment": "Right"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "Input.Number",
+              "value": 10,
+              "id": "sheet_thickness"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Месяц",
+              "size": "Large",
+              "horizontalAlignment": "Right"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "Input.Text",
+              "value": "март",
+              "id": "month_val"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ActionSet",
+      "actions": [
+        {
+          "type": "Action.Submit",
+          "title": "Поиск",
+          "data": {
+            "type": "messageBack",
+            "value": {
+              "request_for": "supply_steel_mark_card",
+              "action": "on_supply_start_card_submit",
+              "validator": "on_supply_start_card_validator"
+            }
+
+          }
+        }
+      ],
+      "horizontalAlignment": "Center"
+    }
+  ]
+}
+  

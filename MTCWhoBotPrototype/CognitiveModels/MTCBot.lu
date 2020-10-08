@@ -1,0 +1,115 @@
+
+> LUIS application information
+> !# @app.name = MTCBot
+> !# @app.desc = Luis Model for MTC Bot
+> !# @app.versionId = 0.1
+> !# @app.culture = en-us
+> !# @app.luis_schema_version = 7.0.0
+> !# @app.tokenizerVersion = 1.0.0
+
+
+> # Intent definitions
+
+## Cancel
+- bye
+- cancel booking
+- exit
+- ignore
+
+
+## MTCRequest
+- book an mtc
+- book an mtc in moscow on march 22, 2020
+- book an mtc moscow
+- book mtc moscow
+- book mtc moscow for monday
+- i wanna have poc in mtc moscow
+- i would like an engagement in mtc moscow
+- i would like to book a meeting
+- i would like to book an engagement in mtc moscow tomorrow
+- i would like to book mtc moscow on monday
+- i would like to have a briefing in mtc irvine next monday
+- i would like to have a briefing in mtc moscow
+- i would like to have a briefing in mtc moscow next monday
+- i would like to have a engagement in mtc moscow next monday
+- i would like to have a workshop
+- i would like to have a briefing in mtc moscow
+- i would like to have an engagement
+- i would like to have an engagement in mtc moscow
+- i would like to have an engagement in mtc moscow next monday
+- i would like to have an engagement next monday
+- i would like to have another engagement
+- i would like to have engagement
+- i would like to have envisioning workshop
+- i would like to have yet another engagement
+- mtc moscow next monday
+- mtc moscow on monday
+- next monday book for me briefing
+- хочу мероприятие
+- я хочу провести мероприятие
+
+
+## None
+
+
+> # Entity definitions
+
+
+> # PREBUILT Entity definitions
+
+@ prebuilt datetimeV2
+
+
+> # Phrase list definitions
+
+
+> # List entities
+
+@ list MTCEngagementType = 
+	- Envisioning workshop :
+		- ideation
+		- workshop
+	- Strategy Briefing :
+		- briefing
+		- sb
+	- Architecture design session :
+		- ads
+	- Rapid prototype :
+		- poc
+	- Hackathon :
+		- hack
+	- Hands-on lab :
+		- hol
+		- lab
+
+
+@ list MTCLocation = 
+	- Moscow :
+		- Russia
+		- москва
+		- россия
+	- Irvine :
+	- Denver :
+	- Ottawa :
+	- Seattle :
+	- Monreal :
+	- Houston :
+	- Toronto :
+	- Boston :
+	- Chicago :
+	- Silicon Valley :
+	- Reston :
+	- Dallas :
+	- New York :
+		- nyc
+	- Minneapolis :
+	- Philadelphia :
+	- Detroit :
+	- St Louis :
+	- Calgary :
+	- Toronto Downtown :
+
+
+> # RegEx entities
+
+

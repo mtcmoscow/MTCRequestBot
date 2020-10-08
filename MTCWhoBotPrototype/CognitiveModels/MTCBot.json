@@ -1,0 +1,333 @@
+{
+  "intents": [
+    {
+      "name": "Cancel"
+    },
+    {
+      "name": "MTCRequest"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [],
+  "composites": [],
+  "closedLists": [
+    {
+      "name": "MTCEngagementType",
+      "subLists": [
+        {
+          "canonicalForm": "Envisioning workshop",
+          "list": [
+            "ideation",
+            "workshop"
+          ]
+        },
+        {
+          "canonicalForm": "Strategy Briefing",
+          "list": [
+            "briefing",
+            "sb"
+          ]
+        },
+        {
+          "canonicalForm": "Architecture design session",
+          "list": [
+            "ads"
+          ]
+        },
+        {
+          "canonicalForm": "Rapid prototype",
+          "list": [
+            "poc"
+          ]
+        },
+        {
+          "canonicalForm": "Hackathon",
+          "list": [
+            "hack"
+          ]
+        },
+        {
+          "canonicalForm": "Hands-on lab",
+          "list": [
+            "hol",
+            "lab"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "MTCLocation",
+      "subLists": [
+        {
+          "canonicalForm": "Moscow",
+          "list": [
+            "Russia",
+            "москва",
+            "россия"
+          ]
+        },
+        {
+          "canonicalForm": "Irvine",
+          "list": []
+        },
+        {
+          "canonicalForm": "Denver",
+          "list": []
+        },
+        {
+          "canonicalForm": "Ottawa",
+          "list": []
+        },
+        {
+          "canonicalForm": "Seattle",
+          "list": []
+        },
+        {
+          "canonicalForm": "Monreal",
+          "list": []
+        },
+        {
+          "canonicalForm": "Houston",
+          "list": []
+        },
+        {
+          "canonicalForm": "Toronto",
+          "list": []
+        },
+        {
+          "canonicalForm": "Boston",
+          "list": []
+        },
+        {
+          "canonicalForm": "Chicago",
+          "list": []
+        },
+        {
+          "canonicalForm": "Silicon Valley",
+          "list": []
+        },
+        {
+          "canonicalForm": "Reston",
+          "list": []
+        },
+        {
+          "canonicalForm": "Dallas",
+          "list": []
+        },
+        {
+          "canonicalForm": "New York",
+          "list": [
+            "nyc"
+          ]
+        },
+        {
+          "canonicalForm": "Minneapolis",
+          "list": []
+        },
+        {
+          "canonicalForm": "Philadelphia",
+          "list": []
+        },
+        {
+          "canonicalForm": "Detroit",
+          "list": []
+        },
+        {
+          "canonicalForm": "St Louis",
+          "list": []
+        },
+        {
+          "canonicalForm": "Calgary",
+          "list": []
+        },
+        {
+          "canonicalForm": "Toronto Downtown",
+          "list": []
+        }
+      ],
+      "roles": []
+    }
+  ],
+  "regex_entities": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "bye",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "cancel booking",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "exit",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "ignore",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "book an mtc",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "book an mtc in moscow on march 22, 2020",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "book an mtc moscow",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "book mtc moscow",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "book mtc moscow for monday",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i wanna have poc in mtc moscow",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like an engagement in mtc moscow",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to book a meeting",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to book an engagement in mtc moscow tomorrow",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to book mtc moscow on monday",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to have a briefing in mtc irvine next monday",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to have a briefing in mtc moscow",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to have a briefing in mtc moscow next monday",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to have a engagement in mtc moscow next monday",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to have a workshop",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to have an engagement",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to have an engagement in mtc moscow",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to have an engagement in mtc moscow next monday",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to have an engagement next monday",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to have another engagement",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to have engagement",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to have envisioning workshop",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "i would like to have yet another engagement",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "mtc moscow next monday",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "mtc moscow on monday",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "next monday book for me briefing",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "хочу мероприятие",
+      "intent": "MTCRequest",
+      "entities": []
+    },
+    {
+      "text": "я хочу провести мероприятие",
+      "intent": "MTCRequest",
+      "entities": []
+    }
+  ],
+  "patterns": [],
+  "patternAnyEntities": [],
+  "prebuiltEntities": [
+    {
+      "name": "datetimeV2",
+      "roles": []
+    }
+  ],
+  "luis_schema_version": "7.0.0",
+  "versionId": "0.1",
+  "name": "MTCBot",
+  "desc": "Luis Model for MTC Bot",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "phraselists": []
+}

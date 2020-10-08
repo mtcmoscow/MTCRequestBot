@@ -1,0 +1,175 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "Container",
+      "style": "emphasis",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "size": "Large",
+                  "weight": "Bolder",
+                  "text": "**EXPENSE APPROVAL**"
+                }
+              ],
+              "width": "stretch"
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "Image",
+                  "url": "https://adaptivecards.io/content/pending.png",
+                  "altText": "Pending",
+                  "height": "30px"
+                }
+              ],
+              "width": "auto"
+            }
+          ]
+        }
+      ],
+      "bleed": true
+    },
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "size": "ExtraLarge",
+                  "text": "Trip to UAE",
+                  "wrap": true
+                }
+              ],
+              "width": "stretch"
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "ActionSet",
+                  "actions": [
+                    {
+                      "type": "Action.OpenUrl",
+                      "title": "EXPORT AS PDF",
+                      "url": "https://adaptivecards.io"
+                    }
+                  ]
+                }
+              ],
+              "width": "auto"
+            }
+          ]
+        },
+        {
+          "type": "TextBlock",
+          "spacing": "Small",
+          "size": "Small",
+          "weight": "Bolder",
+          "color": "Accent",
+          "text": "[ER-13052](https://adaptivecards.io)"
+        },
+        {
+          "type": "FactSet",
+          "spacing": "Large",
+          "facts": [
+            {
+              "title": "Submitted By",
+              "value": "<at>Mikhail Bondarevsky</at>  2020-07-15T18:33:12+0800"
+            },
+            {
+              "title": "Submitted On",
+              "value": "${formatDateTime(2020-07-15T18:33:12+0800, 'yyyy-MM-dd')}"
+            },
+            {
+              "title": "Lead TA:",
+              "value": "<at>Mikhail</at>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "spacing": "Large",
+      "style": "emphasis",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "text": "DATE"
+                }
+              ],
+              "width": "auto"
+            },
+            {
+              "type": "Column",
+              "spacing": "Large",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "text": "CATEGORY"
+                }
+              ],
+              "width": "stretch"
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "text": "AMOUNT"
+                }
+              ],
+              "width": "auto"
+            }
+          ]
+        }
+      ],
+      "bleed": true
+    }
+  ],
+  "msteams": {
+    "entities": [
+      {
+        "type": "mention",
+        "text": "<at>Mikhail</at>",
+        "mentioned": {
+          "id": "29:1X-qpMbDblpTOOpuwnq6-zp-NFa32WT_3E1wW6ViI_Npvknp_n-k3w2CUpG-m4cYNzSmiABAe3GAxsJZswtDsdQ",
+          "name": "Mikhail"
+        }
+      },
+      {
+        "type": "mention",
+        "text": "<at>Mikhail Bondarevsky</at>",
+        "mentioned": {
+          "id": "29:1X-qpMbDblpTOOpuwnq6-zp-NFa32WT_3E1wW6ViI_Npvknp_n-k3w2CUpG-m4cYNzSmiABAe3GAxsJZswtDsdQ",
+          "name": "Mikhail Bondarevsky"
+        }
+      }
+    ]
+  },
+  "fallbackText": "This card requires Adaptive Cards v1.2 support to be rendered properly."
+}

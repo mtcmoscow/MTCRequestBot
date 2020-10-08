@@ -1,0 +1,146 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "TextBlock",
+      "size": "Medium",
+      "weight": "Bolder",
+      "text": "Engagement Confirmation",
+      "horizontalAlignment": "Center"
+    },
+    {
+      "type": "Input.Text",
+      "placeholder": "Title",
+      "style": "text",
+      "maxLength": 0,
+      "id": "Title"
+    },
+    {
+      "type": "Input.Text",
+      "placeholder": "Opp Id",
+      "style": "Url",
+      "maxLength": 0,
+      "id": "OppId"
+    },
+    {
+      "type": "Input.Text",
+      "placeholder": "Meeting Goals",
+      "style": "text",
+      "isMultiline": true,
+      "maxLength": 0,
+      "id": "MeetingGoals"
+    },
+    {
+      "type": "Input.Number",
+      "placeholder": "Number of Attendees",
+      "min": -5,
+      "max": 5,
+      "id": "NumVal"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Start Date",
+      "id": "StartDate"
+    },
+    {
+      "type": "Input.Date",
+      "id": "StartDateDT"
+    },
+    {
+      "type": "TextBlock",
+      "text": "End Date",
+      "id": "EndDate"
+    },
+    {
+      "type": "Input.Date",
+      "placeholder": "Due Date",
+      "id": "EndDateDT",
+      "value": "2017-09-20"
+    },
+    {
+      "type": "TextBlock",
+      "size": "Medium",
+      "weight": "Bolder",
+      "text": "Additional Information",
+      "horizontalAlignment": "Center"
+    },
+    {
+      "type": "TextBlock",
+      "text": "MTC Location"
+    },
+    {
+      "type": "Input.ChoiceSet",
+      "choices": [
+        {
+          "title": "Moscow",
+          "value": "Moscow"
+        },
+        {
+          "title": "Irvine",
+          "value": "Irvine"
+        },
+        {
+          "title": "NY",
+          "value": "NY"
+        }
+      ],
+      "placeholder": "Moscow",
+      "id": "MTCLocationSelector"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Engagement Type:"
+    },
+    {
+      "type": "Input.ChoiceSet",
+      "id": "CompactSelectVal",
+      "value": "1",
+      "choices": [
+        {
+          "title": "Strategy Session",
+          "value": "Strategy Session"
+        },
+        {
+          "title": "Ideation Session",
+          "value": "Ideation Session"
+        }
+      ],
+      "placeholder": "Strategy Session"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Engagement Led By:"
+    },
+    {
+      "type": "Input.ChoiceSet",
+      "id": "SingleSelectVal",
+      "style": "expanded",
+      "value": "1",
+      "choices": [
+        {
+          "title": "MTC-Led",
+          "value": "MTC-Led"
+        },
+        {
+          "title": "MSFT-Led",
+          "value": "MSFT-Led"
+        },
+        {
+          "title": "Partner-Led",
+          "value": "Partner-Led"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Submit",
+      "data": {
+        "id": "1234567890"
+      }
+    }
+  ]
+}

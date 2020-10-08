@@ -1,0 +1,179 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "TextBlock",
+      "size": "Medium",
+      "weight": "Bolder",
+      "text": "Engagement Confirmation",
+      "horizontalAlignment": "Center"
+    },
+    {
+      "type": "Input.Text",
+      "placeholder": "Title",     
+      "style": "text",
+      "maxLength": 0,
+      "id": "Title",
+      "value": "${title}"
+    },
+    {
+      "type": "Input.Text",
+      "placeholder": "Opp Id",
+      "style": "text",
+      "maxLength": 0,
+      "id": "OptId",
+      "value": "${OppId}"
+    },
+    {
+      "type": "Input.Text",
+      "placeholder": "Meeting Goals",
+      "style": "text",
+      "isMultiline": true,
+      "maxLength": 0,
+      "id": "MeetingGoals",
+      "value": "${MeetingGoals}"
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "MTC Location:"
+            },
+            {
+              "type": "Input.ChoiceSet",
+              "id": "MTCLocation",
+              "value": "${MTCLocation}",
+              "choices": [
+                {
+                  "$data": "${MTCLocations}",
+                  "title": "${Title}",
+                  "value": "${Title}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Attendees count:"
+            },
+            {
+              "type": "Input.Number",
+              "min": 1,
+              "max": 50,
+              "id": "Count",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Start Date",
+              "id": "StartDate"
+            },
+            {
+              "type": "Input.Date",
+              "id": "StartDateDT",
+              "value": "${startDate}"
+            }
+          ]          
+        },
+        {
+          "type": "Column",
+          "items": [
+
+            {
+              "type": "TextBlock",
+              "text": "End Date",
+              "id": "EndDate"
+            },
+            {
+              "type": "Input.Date",
+              "placeholder": "Due Date",
+              "id": "EndDateDT",
+              "value": "${endDate}"
+            }
+          ]         
+        }
+      ]
+    },   
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Engagement Type:"
+            },
+            {
+              "type": "Input.ChoiceSet",
+              "id": "EngagementType",
+              "value": "${engagementType}",
+              "choices": [
+                {
+                  "$data": "${EngagementTypes}",
+                  "title": "${DisplayName}",
+                  "value": "${Value}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Engagement Led By:"
+            },
+            {
+              "type": "Input.ChoiceSet",
+              "id": "EngagementLedBy",
+              "value": "MTC-Led",
+              "choices": [
+                {
+                  "title": "MTC-Led",
+                  "value": "MTC-Led"
+                },
+                {
+                  "title": "MSFT-Led",
+                  "value": "MSFT-Led"
+                },
+                {
+                  "title": "Partner-Led",
+                  "value": "Partner-Led"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    } 
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Submit request"
+      
+    }
+  ]
+}
