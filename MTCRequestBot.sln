@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTC.OneAPI", "MTC.OneAPI\MT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTC.OneAPIv2", "MTC.OneAPIv2\MTC.OneAPIv2.csproj", "{64742BE4-634C-49FB-B1B0-E391558D1A2D}"
 EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "MTCBotIaaC", "MTCBotIaaC\MTCBotIaaC.deployproj", "{B0323DF0-2AAB-4B7C-BCB9-59B4E403DB7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{64742BE4-634C-49FB-B1B0-E391558D1A2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64742BE4-634C-49FB-B1B0-E391558D1A2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64742BE4-634C-49FB-B1B0-E391558D1A2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0323DF0-2AAB-4B7C-BCB9-59B4E403DB7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0323DF0-2AAB-4B7C-BCB9-59B4E403DB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0323DF0-2AAB-4B7C-BCB9-59B4E403DB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0323DF0-2AAB-4B7C-BCB9-59B4E403DB7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

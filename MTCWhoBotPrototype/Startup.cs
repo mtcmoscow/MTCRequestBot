@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using MTCRequestBot;
 using MTCWhoBotPrototype.Bots;
 using MTCWhoBotPrototype.Dialogs;
+using MTCWhoBotPrototype.Translation;
 
 namespace MTCWhoBotPrototype
 {
@@ -74,6 +75,9 @@ namespace MTCWhoBotPrototype
 
             // The MainDialog that will be run by the bot.
             services.AddSingleton<MainDialog>();
+
+            // Create the Microsoft Translator responsible for making calls to the Cognitive Services translation service
+            services.AddSingleton<MicrosoftTranslator>();
 
             // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
             services.AddTransient<IBot, DialogAndWelcomeBot<MainDialog>>();

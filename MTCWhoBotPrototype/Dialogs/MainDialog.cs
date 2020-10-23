@@ -22,6 +22,7 @@ using MTCRequestBot.CognitiveModels;
 using MTCWhoBotPrototype.Helpers;
 //using MTCWhoBotPrototype.CognitiveModels;
 using MTCWhoBotPrototype.Model;
+using MTCWhoBotPrototype.Translation;
 using Newtonsoft.Json;
 
 namespace MTCWhoBotPrototype.Dialogs
@@ -29,16 +30,18 @@ namespace MTCWhoBotPrototype.Dialogs
     public class MainDialog : ComponentDialog
     {
         private readonly MTCRequestRecognizer _luisRecognizer;
+        private readonly MicrosoftTranslator _translator;
         protected readonly ILogger Logger;
 
         // Dependency injection uses this constructor to instantiate MainDialog
         public MainDialog(MTCRequestRecognizer luisRecognizer, 
             MTCRequestDialog mtcRequestDialog, 
-            IBotTelemetryClient telemetryClient, 
+            IBotTelemetryClient telemetryClient, MicrosoftTranslator translator,
             ILogger<MainDialog> logger)
             : base(nameof(MainDialog))
         {
             _luisRecognizer = luisRecognizer;
+            _translator = translator ?? throw new ArgumentNullException(nameof(translator));
             Logger = logger;
             
             // Set the telemetry client for this and all child dialogs
@@ -121,6 +124,9 @@ namespace MTCWhoBotPrototype.Dialogs
             //var confirmationCard2 = new AdaptiveCardHelper().CreateAdaptiveCardAttachment("requestCard");
             //var resourceResponse2 = await TeamsHelper.SendCardToTeamAsync(stepContext.Context, confirmationCard2, teamId2, cancellationToken).ConfigureAwait(false);
 
+            stepContext.Context.Activity.Text 
+                = await _translator.TranslateAsync(stepContext.Context.Activity.Text, 
+                /*TranslationSettings.DefaultLanguage*/"en", cancellationToken);
 
             // Call LUIS and gather any potential mtc request details. (Note the TurnContext has the response to the prompt.)
             MTCRequest luisResult = await _luisRecognizer.RecognizeAsync<MTCRequest>(stepContext.Context, cancellationToken);
