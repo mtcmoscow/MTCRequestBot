@@ -1,5 +1,5 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "hostingPlanName": {
@@ -44,7 +44,14 @@
     }
   },
   "variables": {
-    "webSiteName": "[concat('webSite', uniqueString(resourceGroup().id))]"
+    "webSiteName": "[concat(resourceGroup().name, 'BotWebApp')]",
+    "translatorName": "[concat(resourceGroup().name, 'Translator')]",
+    "luisName": "[concat(resourceGroup().name, 'Luis')]",
+    "luisAuthoringName": "[concat(resourceGroup().name, 'LuisAuthoring')]",    
+    "botServiceName": "[concat(resourceGroup().name, 'BotService')]",
+    "botDisplayName": "MTC Request Bot",
+    "botAppId": "dc03a5a1-d2bc-48d9-959d-8a34a3d9685b",
+    "botServiceEndpoint": "[concat('https://', variables('webSiteName'), '.azurewebsites.net/api/messages')]"   
   },
   "resources": [
     {
@@ -161,6 +168,72 @@
       "properties": {
         "applicationId": "[variables('webSiteName')]"
       }
+    },
+
+    {
+      "type": "Microsoft.CognitiveServices/accounts",
+      "apiVersion": "2017-04-18",
+      "name": "[variables('translatorName')]",
+      "location": "global",
+      "sku": {
+        "name": "S1"
+      },
+      "kind": "TextTranslation",
+      "properties": {
+        "customSubDomainName": "[variables('translatorName')]",
+        "privateEndpointConnections": [],
+        "publicNetworkAccess": "Enabled"
+      }
+    },
+
+    {
+      "type": "Microsoft.CognitiveServices/accounts",
+      "apiVersion": "2017-04-18",
+      "name": "[variables('luisName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "S0"
+      },
+      "kind": "LUIS",
+      "properties": {
+        "customSubDomainName": "[variables('luisName')]",
+        "privateEndpointConnections": [],
+        "publicNetworkAccess": "Enabled"
+      }
+    },
+
+   {
+     "type": "Microsoft.CognitiveServices/accounts",
+      "apiVersion": "2017-04-18",
+      "name": "[variables('luisAuthoringName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+          "name": "F0"
+      },
+      "kind": "LUIS.Authoring",
+      "properties": {
+          "customSubDomainName": "[variables('luisAuthoringName')]",
+          "privateEndpointConnections": [],
+          "publicNetworkAccess": "Enabled"
+      }
+    },      
+    {
+        "type": "Microsoft.BotService/botServices",
+        "apiVersion": "2018-07-12",
+        "name": "[variables('botServiceName')]",
+        "location": "global",
+        "sku": {
+            "name": "F0"
+        },
+        "kind": "bot",
+        "properties": {
+            "displayName": "[variables('botDisplayName')]",
+            "description": "",
+            "iconUrl": "https://docs.botframework.com/static/devportal/client/images/bot-framework-default.png",
+            "msaAppId": "[variables('botAppId')]",
+            /*"luisAppIds": [],*/
+            "endpoint": "[variables('botServiceEndpoint')]"
+        }
     }
   ]
 }
