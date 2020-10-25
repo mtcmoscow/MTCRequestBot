@@ -44,8 +44,8 @@
     }
   },
   "variables": {
-    "webSiteName": "[concat(resourceGroup().name, 'BotWebApp')]",
-    "hostingPlanName": "[concat(resourceGroup().name, 'BotWebAppHostingPlan')]",
+    "webSiteName": "[concat(resourceGroup().name, 'WebApp')]",
+    "hostingPlanName": "[concat(resourceGroup().name, 'HostingPlan')]",
     "translatorName": "[concat(resourceGroup().name, 'Translator')]",
     "luisName": "[concat(resourceGroup().name, 'Luis')]",
     "luisAuthoringName": "[concat(resourceGroup().name, 'LuisAuthoring')]",
