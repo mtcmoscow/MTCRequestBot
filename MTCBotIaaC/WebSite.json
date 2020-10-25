@@ -50,7 +50,7 @@
     "luisAuthoringName": "[concat(resourceGroup().name, 'LuisAuthoring')]",    
     "botServiceName": "[concat(resourceGroup().name, 'BotService')]",
     "botDisplayName": "MTC Request Bot",
-    "botAppId": "dc03a5a1-d2bc-48d9-959d-8a34a3d9685b",
+    "botAppId": "b1c0b31a-db35-494f-bf8f-a00c70ceafd8",
     "botServiceEndpoint": "[concat('https://', variables('webSiteName'), '.azurewebsites.net/api/messages')]"   
   },
   "resources": [
