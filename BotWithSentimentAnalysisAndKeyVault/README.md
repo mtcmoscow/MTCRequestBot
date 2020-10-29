@@ -4,6 +4,9 @@ https://github.com/shahedc/GruutChatbot/blob/master/GruutChatbot/Bots/EchoBot.cs
 
 https://daveabrock.com/2020/07/28/azure-bot-service-cognitive-services
 
+https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0&tabs=csharp%2Cvs
+
+
 This bot has been created using [Bot Framework](https://dev.botframework.com), it shows the minimum code required to build a bot.
 
 ## Prerequisites
@@ -56,6 +59,14 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
 ## Deploy the bot to Azure
 
 To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](https://aka.ms/azuredeployment) for a complete list of deployment instructions.
+
+az login
+az account set --subscription d86c71a8-aa44-48b1-9bdb-1f27e3f30bd0
+
+Create AAD App Registration (Microsoft App Id + Password)
+az ad app create --display-name "MibonBotWithSentimentAndKV" --password "AtLeastSixteenCharacters_0"
+
+az deployment sub create --template-file "template-with-new-rg.json" --location westus --parameters appId="521048b1-56ec-40c5-b03f-3bf66be8fed9" appSecret="AtLeastSixteenCharacters_0" botId="MibonSentimentKVBot" botSku=F0 newAppServicePlanName="MibonBotServicePlan" newWebAppName="MibonSentimentKVBotWebApp" groupName="MibonSentimentKVbot" groupLocation="westus" newAppServicePlanLocation="westus" --name "MibonSentimentKV Deployment"
 
 ## Further reading
 

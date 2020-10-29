@@ -171,53 +171,7 @@
       }
     },
 
-    {
-      "type": "Microsoft.CognitiveServices/accounts",
-      "apiVersion": "2017-04-18",
-      "name": "[variables('translatorName')]",
-      "location": "global",
-      "sku": {
-        "name": "S1"
-      },
-      "kind": "TextTranslation",
-      "properties": {
-        "customSubDomainName": "[variables('translatorName')]",
-        "privateEndpointConnections": [],
-        "publicNetworkAccess": "Enabled"
-      }
-    },
-
-    {
-      "type": "Microsoft.CognitiveServices/accounts",
-      "apiVersion": "2017-04-18",
-      "name": "[variables('luisName')]",
-      "location": "[parameters('location')]",
-      "sku": {
-        "name": "S0"
-      },
-      "kind": "LUIS",
-      "properties": {
-        "customSubDomainName": "[variables('luisName')]",
-        "privateEndpointConnections": [],
-        "publicNetworkAccess": "Enabled"
-      }
-    },
-
-   {
-     "type": "Microsoft.CognitiveServices/accounts",
-      "apiVersion": "2017-04-18",
-      "name": "[variables('luisAuthoringName')]",
-      "location": "[parameters('location')]",
-      "sku": {
-          "name": "F0"
-      },
-      "kind": "LUIS.Authoring",
-      "properties": {
-          "customSubDomainName": "[variables('luisAuthoringName')]",
-          "privateEndpointConnections": [],
-          "publicNetworkAccess": "Enabled"
-      }
-    },      
+         
     {
         "type": "Microsoft.BotService/botServices",
         "apiVersion": "2018-07-12",

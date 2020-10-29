@@ -1,0 +1,77 @@
+﻿{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "luisName": {
+      "type": "string",
+      "metadata": {
+        "description": "The name for the LUIS Prediction resource."
+      }
+    },
+    "luisAuthoringName": {
+      "type": "string",
+      "metadata": {
+        "description": "The name for the LUIS Authoring resource."
+      }
+    },
+    "translatorName": { "type": "string" },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Location for all resources."
+      }
+    }
+  },
+  "variables": {
+  },
+  "resources": [
+    {
+      "type": "Microsoft.CognitiveServices/accounts",
+      "apiVersion": "2017-04-18",
+      "name": "[parameters('luisName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "S0"
+      },
+      "kind": "LUIS",
+      "properties": {
+        "customSubDomainName": "[parameters('luisName')]",
+        "privateEndpointConnections": [],
+        "publicNetworkAccess": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.CognitiveServices/accounts",
+      "apiVersion": "2017-04-18",
+      "name": "[parameters('luisAuthoringName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "F0"
+      },
+      "kind": "LUIS.Authoring",
+      "properties": {
+        "customSubDomainName": "[parameters('luisAuthoringName')]",
+        "privateEndpointConnections": [],
+        "publicNetworkAccess": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.CognitiveServices/accounts",
+      "apiVersion": "2017-04-18",
+      "name": "[parameters('translatorName')]",
+      "location": "global",
+      "sku": {
+        "name": "S1"
+      },
+      "kind": "TextTranslation",
+      "properties": {
+        "customSubDomainName": "[parameters('translatorName')]",
+        "privateEndpointConnections": [],
+        "publicNetworkAccess": "Enabled"
+      }
+    }
+  ],
+  "outputs": {
+  }
+}
