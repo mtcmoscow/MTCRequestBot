@@ -16,9 +16,9 @@ env:
   IS_PRIVATE_REPOSITORY: false
 
   # Set the path to the lu file for your LUIS app
-  LU_FILE: luis-app/model.lu
+  LU_FILE: MTCBot.AI/luis-app/model.lu
   # Set the path to the file for your unit tests
-  UNIT_TEST_FILE: luis-app/tests/unittests.json
+  UNIT_TEST_FILE: MTCBot.AI/luis-app/tests/unittests.json
 
 jobs:
   build:
