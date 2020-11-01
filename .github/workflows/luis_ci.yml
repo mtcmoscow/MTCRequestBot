@@ -2,7 +2,7 @@
 
 name: LUIS-CI
 
-# Triggers the workflow on push to the master branch, and only for changes to lu or json files.
+# Triggers the workflow on push to the master branch, and only for changes to lu or json files (tests).
 # events but only for the master branch
 on:
   push:
@@ -21,24 +21,38 @@ env:
   # Set the path to the file for your unit tests
   QUALITY_TEST_FILE: MTCBot.AI/luis-app/tests/verificationtests.json
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+
 jobs:
-  # This workflow contains a single job called "build"
+  
   build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    name: LUIS Build and Test
+    runs-on: ubuntu-latest    
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Checkout
+        uses: actions/checkout@v2
+              
+      - name: Fetch all history for all tags and branches - for GitVersion
+        if: env.IS_PRIVATE_REPOSITORY=='true'
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          git config remote.origin.url https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}
+          git fetch --prune --unshallow
+      
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.3
+        with:
+          versionSpec: '5.2.x'
+      - name: Use GitVersion
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.9.3
+        
+      - name: luisAppVersion env
+        run: echo "::set-env name=luisAppVersion::$GitVersion_SemVer"
+      
+      - name: azure login
+        uses: azure/login@v1
+        with:
+          creds: ${{secretes.AZURE_CREDENTIALS}}
+      - name: get luis authoring key
+        run: |
+          
+     
