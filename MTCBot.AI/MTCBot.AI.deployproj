@@ -30,6 +30,9 @@
     </None>
     <Content Include="Deploy-AzureResourceGroup.ps1" />
     <None Include="luis-app\model.lu" />
+    <None Include="luis-app\tests\compare.yml" />
+    <None Include="luis-app\tests\unittests.json" />
+    <None Include="luis-app\tests\verificationtests.json" />
   </ItemGroup>
   <Target Name="GetReferenceAssemblyPaths" />
 </Project>
