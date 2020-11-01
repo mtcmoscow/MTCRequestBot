@@ -1,6 +1,6 @@
 
 > LUIS application information
-> !# @app.name = DevOpsSample
+> !# @app.name = MTCBot Request Model
 > !# @app.desc = Sample app for the LUIS DevOps guidance
 > !# @app.versionId = 0.1
 > !# @app.culture = en-us
