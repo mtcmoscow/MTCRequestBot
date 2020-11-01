@@ -79,6 +79,22 @@
     - @ ml days-duration
         - @ number days-number
 
+@ list MTCEngagementType = 
+	- Envisioning workshop :
+		- ideation
+		- workshop
+	- Strategy Briefing :
+		- briefing
+		- sb
+	- Architecture design session :
+		- ads
+	- Rapid prototype :
+		- poc
+	- Hackathon :
+		- hack
+	- Hands-on lab :
+		- hol
+		- lab
 
 
 > # PREBUILT Entity definitions
