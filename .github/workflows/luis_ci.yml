@@ -1,0 +1,58 @@
+# This is a basic workflow to help you get started with Actions
+
+name: LUIS-CI
+
+# Triggers the workflow on push to the master branch, and only for changes to lu or json files (tests).
+# events but only for the master branch
+on:
+  push:
+    branches:
+      - master
+    paths: 
+      - 'MTCBot.AI/luis-app/*.lu'
+      - 'MTCBot.AI/luis-app/tests/*.json'
+env:
+  LUIS_MASTER_APP_NAME: LUISMTCBot-master
+  IS_PRIVATE_REPOSITORY: true
+  # Set the path to the lu file for your LUIS app
+  LU_FILE: MTCBot.AI/luis-app/model.lu
+  # Set the path to the file for your unit tests
+  UNIT_TEST_FILE: MTCBot.AI/luis-app/tests/unittests.json
+  # Set the path to the file for your unit tests
+  QUALITY_TEST_FILE: MTCBot.AI/luis-app/tests/verificationtests.json
+
+
+jobs:
+  
+  build:
+    name: LUIS Build and Test
+    runs-on: ubuntu-latest    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+              
+      - name: Fetch all history for all tags and branches - for GitVersion
+        if: env.IS_PRIVATE_REPOSITORY=='true'
+        run: |
+          git config remote.origin.url https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}
+          git fetch --prune --unshallow
+      
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.3
+        with:
+          versionSpec: '5.2.x'
+      - name: Use GitVersion
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.9.3
+        
+      - name: luisAppVersion env
+        run: echo "::set-env name=luisAppVersion::$GitVersion_SemVer"
+      
+      - name: azure login
+        uses: azure/login@v1
+        with:
+          creds: ${{secretes.AZURE_CREDENTIALS}}
+      - name: get luis authoring key
+        run: |
+          
+     
