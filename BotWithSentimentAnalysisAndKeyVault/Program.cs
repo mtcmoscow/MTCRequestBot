@@ -26,9 +26,9 @@ namespace BotWithSentimentAnalysisAndKeyVault
                     builtConfig["KeyVault:ClientId"],
                     builtConfig["KeyVault:ClientSecret"]);
             })
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            });
     }
 }
