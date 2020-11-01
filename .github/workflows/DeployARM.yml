@@ -7,8 +7,14 @@ name: DeployARM
 on:
   push:
     branches: [ master ]
+    paths:
+      - 'MTCBotIaaC/*.json'
+      
+    
   pull_request:
     branches: [ master ]
+    paths:
+      - 'MTCBotIaaC/*.json'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
