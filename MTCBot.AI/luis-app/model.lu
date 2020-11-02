@@ -68,6 +68,12 @@
 - requesting {@vacation-request=vacations {@date-range=from july 20 to august 15}}
 - yeah i'd like to book a {@vacation-request=vacation {@start-date=starting april 10th} lasting for {@days-duration={@days-number=10} days}} please
 
+## MTCRequest
+- book an mtc
+- book an mtc in moscow on march 22, 2020
+- book an mtc moscow
+- book mtc moscow
+- book mtc moscow for monday
 
 > # Entity definitions
 
