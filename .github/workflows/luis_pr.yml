@@ -102,7 +102,7 @@ jobs:
       run: dotnet tool install -g dotnet-nlu --version 0.7.5
 
     - name: Add dotnet Tools to Path
-      run: echo "::add-path::$HOME/.dotnet/tools"
+      run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
     - name: Get Azure subscriptionId
       run: |
