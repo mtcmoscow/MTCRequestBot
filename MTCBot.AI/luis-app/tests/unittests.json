@@ -32,7 +32,7 @@
     ]
   },
   {
-    "text": "hi i want to book vacation from 02/15/2020 to 03/25/2020 thanks",
+    "text": "hi I want to book vacation from 02/15/2020 to 03/25/2020 thanks",
     "intent": "RequestVacation",
     "entities": [
       {
