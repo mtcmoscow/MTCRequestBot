@@ -102,6 +102,59 @@
 		- hol
 		- lab
 
+@ list MTCLocation = 
+	- Moscow :
+		- Russia
+	- Sao Paulo :
+	- Mexico City : 
+	- Amsterdam :
+	- Brussels :
+	- Copenhagen :
+	- Dubai :
+	- Dublin :
+	- Edinburgh :
+	- Istanbul :
+	- Johannesburg :
+	- London :
+	- Milan :	
+	- Munich :
+	- Oslo :
+	- Paris :
+	- Stockholm :
+	- Tel Aviv :
+	- Thames Valley :
+	- Warsaw :
+	- Asia :
+	- Beijing :
+	- Bengaluru :
+	- GuangZhou :
+	- Mumbai :
+	- Seoul :
+	- Shanghai :
+	- Singapore :
+	- Sydney :
+	- Taipei :
+	- Tokyo :
+	- Irvine :
+	- Denver :
+	- Ottawa :
+	- Seattle :
+	- Monreal :
+	- Houston :
+	- Toronto :
+	- Boston :
+	- Chicago :
+	- Silicon Valley :
+	- Reston :
+	- Dallas :
+	- New York :
+		- nyc
+	- Minneapolis :
+	- Philadelphia :
+	- Detroit :
+	- St Louis :
+	- Calgary :
+	- Toronto Downtown :
 
 > # PREBUILT Entity definitions
 
