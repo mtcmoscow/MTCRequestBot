@@ -1,6 +1,6 @@
 [
   {
-    "text": "i want paid time off from july 23 to august 15",
+    "text": "i want paid time off from july 23 to august 13",
     "intent": "RequestVacation",
     "entities": [
       {
