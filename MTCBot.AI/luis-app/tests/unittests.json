@@ -6,14 +6,19 @@
       {
         "entityType": "MTCLocation",
         "matchText": "moscow",
-        "entityValue":"Moscow" 
+        "entityValue": "Moscow"
       },
       {
         "entityType": "MTCEngagementType",
-        "matchText":  "briefing",
+        "matchText": "briefing",
         "entityValue": "Strategy Briefing"
       }
-    ]    
+    ],
+    "intents": [
+      {
+        "intent": "MTCRequest"
+      }
+    ]
   },
   {
     "text": "i want paid time off from july 23 to august 13",
