@@ -1,5 +1,23 @@
 [
   {
+    "text": "i wanna book mtc moscow for a briefing next monday",
+    "intent": "MTCRequest",
+    "entities": [
+      {
+        "entityType": "MTCLocation",        
+        "matchText":  "moscow"
+      },
+      {
+        "entityType": "MTCEngagementType",
+        "matchText": "briefing"
+      },
+      {
+        "entityType": "datetimeV2",        
+        "matchText": "next monday"
+      }
+    ]   
+  },
+  {
     "text": "hello, would like to solicit a paid time off vacation between 18th of july and 25 of july. now that business season is over i need to recharge my battteries.",
     "intent": "RequestVacation",
     "entities": [
