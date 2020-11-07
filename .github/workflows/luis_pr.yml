@@ -130,6 +130,22 @@ jobs:
     - name: Analyze Unit test results
       run: dotnet nlu compare -e $UNIT_TEST_FILE -a results.json --unit-test --output-folder unittest
 
+    - name: Create or Update Comment
+      # You may pin to the exact commit or the version.
+      # uses: peter-evans/create-or-update-comment@93b7c58cfab6e4355cd3027f73c7c731437e85fa
+      uses: peter-evans/create-or-update-comment@v1.4.3
+      with:        
+        # The number of the issue or pull request in which to create a comment.
+        issue-number: ${{ github.event.pull_request.number }}
+        # The comment body.
+        body: |
+            This is a multi-line test comment
+            - With GitHub **Markdown** :sparkles:
+            - Created by [create-or-update-comment][1]
+
+            [1]: https://github.com/peter-evans/create-or-update-comment
+        
+        
     - name: Archive Unit Test Results
       uses: actions/upload-artifact@v1
       with:
