@@ -1,0 +1,291 @@
+﻿[
+  {
+    "utteranceId": "0",
+    "testName": "TruePositiveIntent('MTCRequest', 'i would  like to have a briefing in mtc Moscow next monday')",
+    "group": "MTCRequest",
+    "resultKind": "TruePositive",
+    "targetKind": "Intent",
+    "expectedUtterance": {
+      "text": "i would  like to have a briefing in mtc Moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "MTCEngagementType",
+          "matchText": "briefing"
+        },
+        {
+          "entityType": "datetimeV2",
+          "matchText": "next monday"
+        }
+      ]
+    },
+    "actualUtterance": {
+      "text": "i would  like to have a briefing in mtc Moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCEngagementType",
+          "entityValue": [
+            "Strategy Briefing"
+          ],
+          "matchText": "briefing"
+        },
+        {
+          "entityType": "MTCLocation",
+          "entityValue": [
+            "Moscow"
+          ],
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "entityValue": {
+            "type": "date",
+            "values": [
+              {
+                "timex": "2020-11-09",
+                "value": "2020-11-09"
+              }
+            ]
+          },
+          "matchText": "next monday"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "MTCRequest",
+          "score": 0.9676499
+        }
+      ],
+      "score": 0.9676499,
+      "textScore": 0.0,
+      "timestamp": "2020-11-07T23:19:27.5963186+03:00"
+    },
+    "score": 0.9676499,
+    "because": "Utterances have matching intent.",
+    "categories": [
+      "Intent",
+      "TruePositive"
+    ]
+  },
+  {
+    "utteranceId": "0",
+    "testName": "TruePositiveEntity('MTCLocation', '\"Moscow\"', 'i would  like to have a briefing in mtc Moscow next monday')",
+    "group": "MTCLocation",
+    "resultKind": "TruePositive",
+    "targetKind": "Entity",
+    "expectedUtterance": {
+      "text": "i would  like to have a briefing in mtc Moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "MTCEngagementType",
+          "matchText": "briefing"
+        },
+        {
+          "entityType": "datetimeV2",
+          "matchText": "next monday"
+        }
+      ]
+    },
+    "actualUtterance": {
+      "text": "i would  like to have a briefing in mtc Moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCEngagementType",
+          "entityValue": [
+            "Strategy Briefing"
+          ],
+          "matchText": "briefing"
+        },
+        {
+          "entityType": "MTCLocation",
+          "entityValue": [
+            "Moscow"
+          ],
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "entityValue": {
+            "type": "date",
+            "values": [
+              {
+                "timex": "2020-11-09",
+                "value": "2020-11-09"
+              }
+            ]
+          },
+          "matchText": "next monday"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "MTCRequest",
+          "score": 0.9676499
+        }
+      ],
+      "score": 0.9676499,
+      "textScore": 0.0,
+      "timestamp": "2020-11-07T23:19:27.5963186+03:00"
+    },
+    "because": "Both utterances have entity 'Moscow'.",
+    "categories": [
+      "Entity",
+      "TruePositive"
+    ]
+  },
+  {
+    "utteranceId": "0",
+    "testName": "TruePositiveEntity('MTCEngagementType', '\"briefing\"', 'i would  like to have a briefing in mtc Moscow next monday')",
+    "group": "MTCEngagementType",
+    "resultKind": "TruePositive",
+    "targetKind": "Entity",
+    "expectedUtterance": {
+      "text": "i would  like to have a briefing in mtc Moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "MTCEngagementType",
+          "matchText": "briefing"
+        },
+        {
+          "entityType": "datetimeV2",
+          "matchText": "next monday"
+        }
+      ]
+    },
+    "actualUtterance": {
+      "text": "i would  like to have a briefing in mtc Moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCEngagementType",
+          "entityValue": [
+            "Strategy Briefing"
+          ],
+          "matchText": "briefing"
+        },
+        {
+          "entityType": "MTCLocation",
+          "entityValue": [
+            "Moscow"
+          ],
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "entityValue": {
+            "type": "date",
+            "values": [
+              {
+                "timex": "2020-11-09",
+                "value": "2020-11-09"
+              }
+            ]
+          },
+          "matchText": "next monday"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "MTCRequest",
+          "score": 0.9676499
+        }
+      ],
+      "score": 0.9676499,
+      "textScore": 0.0,
+      "timestamp": "2020-11-07T23:19:27.5963186+03:00"
+    },
+    "because": "Both utterances have entity 'briefing'.",
+    "categories": [
+      "Entity",
+      "TruePositive"
+    ]
+  },
+  {
+    "utteranceId": "0",
+    "testName": "TruePositiveEntity('datetimeV2', '\"next monday\"', 'i would  like to have a briefing in mtc Moscow next monday')",
+    "group": "datetimeV2",
+    "resultKind": "TruePositive",
+    "targetKind": "Entity",
+    "expectedUtterance": {
+      "text": "i would  like to have a briefing in mtc Moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "MTCEngagementType",
+          "matchText": "briefing"
+        },
+        {
+          "entityType": "datetimeV2",
+          "matchText": "next monday"
+        }
+      ]
+    },
+    "actualUtterance": {
+      "text": "i would  like to have a briefing in mtc Moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCEngagementType",
+          "entityValue": [
+            "Strategy Briefing"
+          ],
+          "matchText": "briefing"
+        },
+        {
+          "entityType": "MTCLocation",
+          "entityValue": [
+            "Moscow"
+          ],
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "entityValue": {
+            "type": "date",
+            "values": [
+              {
+                "timex": "2020-11-09",
+                "value": "2020-11-09"
+              }
+            ]
+          },
+          "matchText": "next monday"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "MTCRequest",
+          "score": 0.9676499
+        }
+      ],
+      "score": 0.9676499,
+      "textScore": 0.0,
+      "timestamp": "2020-11-07T23:19:27.5963186+03:00"
+    },
+    "because": "Both utterances have entity 'next monday'.",
+    "categories": [
+      "Entity",
+      "TruePositive"
+    ]
+  }
+]
