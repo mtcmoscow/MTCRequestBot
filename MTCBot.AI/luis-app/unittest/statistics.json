@@ -1,0 +1,55 @@
+{
+  "text": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "intent": [
+    1,
+    0,
+    0,
+    0
+  ],
+  "entity": [
+    3,
+    0,
+    0,
+    0
+  ],
+  "entityValue": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "byIntent": {
+    "MTCRequest": [
+      1,
+      0,
+      0,
+      0
+    ]
+  },
+  "byEntityType": {
+    "MTCLocation": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "MTCEngagementType": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "datetimeV2": [
+      1,
+      0,
+      0,
+      0
+    ]
+  },
+  "byEntityValueType": {}
+}
