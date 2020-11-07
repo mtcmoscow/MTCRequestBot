@@ -1,6 +1,6 @@
 
 > LUIS application information
-> !# @app.name = MTCBot Request Model
+> !# @app.name = MTCBot Model
 > !# @app.desc = MTCBot model for request and find an expert
 > !# @app.versionId = 0.1
 > !# @app.culture = en-us
