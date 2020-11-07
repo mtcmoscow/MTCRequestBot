@@ -129,8 +129,8 @@ jobs:
 
     - name: Analyze Unit test results
       run: |
-        response=`dotnet nlu compare -e $UNIT_TEST_FILE -a results.json --unit-test --output-folder unittest`
-        echo "UnitTestResults=$response" >> $GITHUB_ENV
+        dotnet nlu compare -e $UNIT_TEST_FILE -a results.json --unit-test --output-folder unittest | \
+        xargs -I {} echo "UnitTestResults={}" >> $GITHUB_ENV      
 
     - name: Create or Update Comment
       # You may pin to the exact commit or the version.
