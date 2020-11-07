@@ -128,7 +128,9 @@ jobs:
         luisIsStaging: false
 
     - name: Analyze Unit test results
-      run: dotnet nlu compare -e $UNIT_TEST_FILE -a results.json --unit-test --output-folder unittest
+      run: |
+        response=$(dotnet nlu compare -e $UNIT_TEST_FILE -a results.json --unit-test --output-folder unittest)
+        echo "UnitTestResults=$response" >> $GITHUB_ENV
 
     - name: Create or Update Comment
       # You may pin to the exact commit or the version.
@@ -142,6 +144,7 @@ jobs:
             This is a multi-line test comment
             - With GitHub **Markdown** :sparkles:
             - Created by [create-or-update-comment][1]
+            - ${{env.UnitTestResults}}
 
             [1]: https://github.com/peter-evans/create-or-update-comment
         
