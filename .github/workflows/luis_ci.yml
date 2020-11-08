@@ -140,7 +140,7 @@ jobs:
       run: bf luis:application:publish --appId $LUISAppId --direct --versionId $LUISAppVersion --endpoint $LUISAuthoringEndpoint --subscriptionKey $LUISAuthoringKey
 
     - name: Install dotnet-nlu
-      run: dotnet tool install -g dotnet-nlu --version 0.7.5
+      run: dotnet tool install -g dotnet-nlu --version 0.8.0
 
     - name: Add dotnet Tools to Path
       run: echo "::add-path::$HOME/.dotnet/tools"
@@ -260,13 +260,13 @@ jobs:
         xargs -I {} echo "::set-env name=LUISAppVersion::{}"
 
     - name: Install dotnet-nlu
-      run: dotnet tool install -g dotnet-nlu --version 0.7.5
+      run: dotnet tool install -g dotnet-nlu --version 0.8.0
 
     - name: Add dotnet Tools to Path
       run: echo "::add-path::$HOME/.dotnet/tools"
 
     - name: Test Luis model with quality verification tests
-      run: dotnet nlu test -s luisV3 -u $QUALITY_TEST_FILE -o F-results.json
+      run: dotnet nlu test -s luisV3 -u $UNIT_TEST_FILE -o F-results.json
       env:
         luisAppId: ${{ env.LUISAppId }}
         luisVersionId: ${{ env.LUISAppVersion }}
