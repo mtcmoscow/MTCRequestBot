@@ -131,7 +131,7 @@ jobs:
       id: analyze_unit_tests
       run: |
         result=$(dotnet nlu compare -e $UNIT_TEST_FILE -a results.json --unit-test --output-folder unittest)
-        result="${result//'%'/'%25'}【7,6 m】"
+        result="${result//'%'/'%25'}"
         result="${result//$'\n'/'%0A'}"
         result="${result//$'\r'/'%0D'}"
         echo "::set-output name=unittestresults::$result"      

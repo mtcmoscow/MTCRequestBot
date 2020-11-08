@@ -167,6 +167,15 @@ jobs:
         luisEndpointKey: ${{ env.LUISPredictionKey }}
         luisPredictionResourceName: ${{ secrets.AZURE_LUIS_PREDICTION_RESOURCE_NAME }}
 
+    - name: Super Test Luis model with quality verification tests
+      run: dotnet nlu test -s luisV3 -u $QUALITY_TEST_FILE -o F-results.json
+      env:
+        luisAppId: ${{ env.LUISAppId }}
+        luisVersionId: ${{ env.LUISAppVersion }}
+        luisDirectVersionPublish: true
+        luisEndpointKey: ${{ env.LUISPredictionKey }}
+        luisPredictionResourceName: ${{ secrets.AZURE_LUIS_PREDICTION_RESOURCE_NAME }}
+
     - name: Analyze Unit test results
       run: dotnet nlu compare -e $UNIT_TEST_FILE -a results.json --unit-test --output-folder unittest
 
@@ -263,10 +272,10 @@ jobs:
       run: dotnet tool install -g dotnet-nlu --version 0.8.0
 
     - name: Add dotnet Tools to Path
-      run: echo "::add-path::$HOME/.dotnet/tools"
+      run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
-    - name: Test Luis model with quality verification tests      
-      run: dotnet nlu test -s luisV3 -u $UNIT_TEST_FILE -o results.json
+    - name: Test Luis model with quality verification tests
+      run: dotnet nlu test -s luisV3 -u $QUALITY_TEST_FILE -o F-results.json
       env:
         luisAppId: ${{ env.LUISAppId }}
         luisVersionId: ${{ env.LUISAppVersion }}

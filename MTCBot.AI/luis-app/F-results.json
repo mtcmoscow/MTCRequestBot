@@ -1,0 +1,44 @@
+﻿[
+  {
+    "text": "i would  like to have a briefing in mtc Moscow next monday, thanks!",
+    "intent": "MTCRequest",
+    "entities": [
+      {
+        "entityType": "MTCEngagementType",
+        "entityValue": [
+          "Strategy Briefing"
+        ],
+        "matchText": "briefing"
+      },
+      {
+        "entityType": "MTCLocation",
+        "entityValue": [
+          "Moscow"
+        ],
+        "matchText": "Moscow"
+      },
+      {
+        "entityType": "datetimeV2",
+        "entityValue": {
+          "type": "date",
+          "values": [
+            {
+              "timex": "2020-11-09",
+              "value": "2020-11-09"
+            }
+          ]
+        },
+        "matchText": "next monday"
+      }
+    ],
+    "intents": [
+      {
+        "intent": "MTCRequest",
+        "score": 0.9427171
+      }
+    ],
+    "score": 0.9427171,
+    "textScore": 0.0,
+    "timestamp": "2020-11-08T23:18:01.6807461+03:00"
+  }
+]

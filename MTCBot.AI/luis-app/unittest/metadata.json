@@ -21,7 +21,9 @@
           "entityType": "datetimeV2",
           "matchText": "next monday"
         }
-      ]
+      ],
+      "text": "i would  like to have a briefing in mtc Moscow next monday",
+      "intent": "MTCRequest"
     },
     "actualUtterance": {
       "text": "i would  like to have a briefing in mtc Moscow next monday",
@@ -63,9 +65,137 @@
       ],
       "score": 0.9676499,
       "textScore": 0.0,
-      "timestamp": "2020-11-07T23:19:27.5963186+03:00"
+      "timestamp": "2020-11-08T23:17:21.5765275+03:00"
     },
     "score": 0.9676499,
+    "because": "Utterances have matching intent.",
+    "categories": [
+      "Intent",
+      "TruePositive"
+    ]
+  },
+  {
+    "utteranceId": "1",
+    "testName": "TruePositiveIntent('MTCRequest', 'book mtc Moscow next monday')",
+    "group": "MTCRequest",
+    "resultKind": "TruePositive",
+    "targetKind": "Intent",
+    "expectedUtterance": {
+      "text": "book mtc Moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "matchText": "next monday"
+        }
+      ],
+      "text": "book mtc Moscow next monday",
+      "intent": "MTCRequest"
+    },
+    "actualUtterance": {
+      "text": "book mtc Moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "entityValue": [
+            "Moscow"
+          ],
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "entityValue": {
+            "type": "date",
+            "values": [
+              {
+                "timex": "2020-11-09",
+                "value": "2020-11-09"
+              }
+            ]
+          },
+          "matchText": "next monday"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "MTCRequest",
+          "score": 0.985769
+        }
+      ],
+      "score": 0.985769,
+      "textScore": 0.0,
+      "timestamp": "2020-11-08T23:17:21.5765026+03:00"
+    },
+    "score": 0.985769,
+    "because": "Utterances have matching intent.",
+    "categories": [
+      "Intent",
+      "TruePositive"
+    ]
+  },
+  {
+    "utteranceId": "2",
+    "testName": "TruePositiveIntent('MTCRequest', 'meeting in mtc moscow next monday')",
+    "group": "MTCRequest",
+    "resultKind": "TruePositive",
+    "targetKind": "Intent",
+    "expectedUtterance": {
+      "text": "meeting in mtc moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "matchText": "next monday"
+        }
+      ],
+      "text": "meeting in mtc moscow next monday",
+      "intent": "MTCRequest"
+    },
+    "actualUtterance": {
+      "text": "meeting in mtc moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "entityValue": [
+            "Moscow"
+          ],
+          "matchText": "moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "entityValue": {
+            "type": "date",
+            "values": [
+              {
+                "timex": "2020-11-09",
+                "value": "2020-11-09"
+              }
+            ]
+          },
+          "matchText": "next monday"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "MTCRequest",
+          "score": 0.961173236
+        }
+      ],
+      "score": 0.961173236,
+      "textScore": 0.0,
+      "timestamp": "2020-11-08T23:17:21.5764837+03:00"
+    },
+    "score": 0.961173236,
     "because": "Utterances have matching intent.",
     "categories": [
       "Intent",
@@ -94,7 +224,9 @@
           "entityType": "datetimeV2",
           "matchText": "next monday"
         }
-      ]
+      ],
+      "text": "i would  like to have a briefing in mtc Moscow next monday",
+      "intent": "MTCRequest"
     },
     "actualUtterance": {
       "text": "i would  like to have a briefing in mtc Moscow next monday",
@@ -136,7 +268,7 @@
       ],
       "score": 0.9676499,
       "textScore": 0.0,
-      "timestamp": "2020-11-07T23:19:27.5963186+03:00"
+      "timestamp": "2020-11-08T23:17:21.5765275+03:00"
     },
     "because": "Both utterances have entity 'Moscow'.",
     "categories": [
@@ -166,7 +298,9 @@
           "entityType": "datetimeV2",
           "matchText": "next monday"
         }
-      ]
+      ],
+      "text": "i would  like to have a briefing in mtc Moscow next monday",
+      "intent": "MTCRequest"
     },
     "actualUtterance": {
       "text": "i would  like to have a briefing in mtc Moscow next monday",
@@ -208,7 +342,7 @@
       ],
       "score": 0.9676499,
       "textScore": 0.0,
-      "timestamp": "2020-11-07T23:19:27.5963186+03:00"
+      "timestamp": "2020-11-08T23:17:21.5765275+03:00"
     },
     "because": "Both utterances have entity 'briefing'.",
     "categories": [
@@ -238,7 +372,9 @@
           "entityType": "datetimeV2",
           "matchText": "next monday"
         }
-      ]
+      ],
+      "text": "i would  like to have a briefing in mtc Moscow next monday",
+      "intent": "MTCRequest"
     },
     "actualUtterance": {
       "text": "i would  like to have a briefing in mtc Moscow next monday",
@@ -280,7 +416,259 @@
       ],
       "score": 0.9676499,
       "textScore": 0.0,
-      "timestamp": "2020-11-07T23:19:27.5963186+03:00"
+      "timestamp": "2020-11-08T23:17:21.5765275+03:00"
+    },
+    "because": "Both utterances have entity 'next monday'.",
+    "categories": [
+      "Entity",
+      "TruePositive"
+    ]
+  },
+  {
+    "utteranceId": "1",
+    "testName": "TruePositiveEntity('MTCLocation', '\"Moscow\"', 'book mtc Moscow next monday')",
+    "group": "MTCLocation",
+    "resultKind": "TruePositive",
+    "targetKind": "Entity",
+    "expectedUtterance": {
+      "text": "book mtc Moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "matchText": "next monday"
+        }
+      ],
+      "text": "book mtc Moscow next monday",
+      "intent": "MTCRequest"
+    },
+    "actualUtterance": {
+      "text": "book mtc Moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "entityValue": [
+            "Moscow"
+          ],
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "entityValue": {
+            "type": "date",
+            "values": [
+              {
+                "timex": "2020-11-09",
+                "value": "2020-11-09"
+              }
+            ]
+          },
+          "matchText": "next monday"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "MTCRequest",
+          "score": 0.985769
+        }
+      ],
+      "score": 0.985769,
+      "textScore": 0.0,
+      "timestamp": "2020-11-08T23:17:21.5765026+03:00"
+    },
+    "because": "Both utterances have entity 'Moscow'.",
+    "categories": [
+      "Entity",
+      "TruePositive"
+    ]
+  },
+  {
+    "utteranceId": "1",
+    "testName": "TruePositiveEntity('datetimeV2', '\"next monday\"', 'book mtc Moscow next monday')",
+    "group": "datetimeV2",
+    "resultKind": "TruePositive",
+    "targetKind": "Entity",
+    "expectedUtterance": {
+      "text": "book mtc Moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "matchText": "next monday"
+        }
+      ],
+      "text": "book mtc Moscow next monday",
+      "intent": "MTCRequest"
+    },
+    "actualUtterance": {
+      "text": "book mtc Moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "entityValue": [
+            "Moscow"
+          ],
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "entityValue": {
+            "type": "date",
+            "values": [
+              {
+                "timex": "2020-11-09",
+                "value": "2020-11-09"
+              }
+            ]
+          },
+          "matchText": "next monday"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "MTCRequest",
+          "score": 0.985769
+        }
+      ],
+      "score": 0.985769,
+      "textScore": 0.0,
+      "timestamp": "2020-11-08T23:17:21.5765026+03:00"
+    },
+    "because": "Both utterances have entity 'next monday'.",
+    "categories": [
+      "Entity",
+      "TruePositive"
+    ]
+  },
+  {
+    "utteranceId": "2",
+    "testName": "TruePositiveEntity('MTCLocation', '\"Moscow\"', 'meeting in mtc moscow next monday')",
+    "group": "MTCLocation",
+    "resultKind": "TruePositive",
+    "targetKind": "Entity",
+    "expectedUtterance": {
+      "text": "meeting in mtc moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "matchText": "next monday"
+        }
+      ],
+      "text": "meeting in mtc moscow next monday",
+      "intent": "MTCRequest"
+    },
+    "actualUtterance": {
+      "text": "meeting in mtc moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "entityValue": [
+            "Moscow"
+          ],
+          "matchText": "moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "entityValue": {
+            "type": "date",
+            "values": [
+              {
+                "timex": "2020-11-09",
+                "value": "2020-11-09"
+              }
+            ]
+          },
+          "matchText": "next monday"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "MTCRequest",
+          "score": 0.961173236
+        }
+      ],
+      "score": 0.961173236,
+      "textScore": 0.0,
+      "timestamp": "2020-11-08T23:17:21.5764837+03:00"
+    },
+    "because": "Both utterances have entity 'Moscow'.",
+    "categories": [
+      "Entity",
+      "TruePositive"
+    ]
+  },
+  {
+    "utteranceId": "2",
+    "testName": "TruePositiveEntity('datetimeV2', '\"next monday\"', 'meeting in mtc moscow next monday')",
+    "group": "datetimeV2",
+    "resultKind": "TruePositive",
+    "targetKind": "Entity",
+    "expectedUtterance": {
+      "text": "meeting in mtc moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "matchText": "Moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "matchText": "next monday"
+        }
+      ],
+      "text": "meeting in mtc moscow next monday",
+      "intent": "MTCRequest"
+    },
+    "actualUtterance": {
+      "text": "meeting in mtc moscow next monday",
+      "intent": "MTCRequest",
+      "entities": [
+        {
+          "entityType": "MTCLocation",
+          "entityValue": [
+            "Moscow"
+          ],
+          "matchText": "moscow"
+        },
+        {
+          "entityType": "datetimeV2",
+          "entityValue": {
+            "type": "date",
+            "values": [
+              {
+                "timex": "2020-11-09",
+                "value": "2020-11-09"
+              }
+            ]
+          },
+          "matchText": "next monday"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "MTCRequest",
+          "score": 0.961173236
+        }
+      ],
+      "score": 0.961173236,
+      "textScore": 0.0,
+      "timestamp": "2020-11-08T23:17:21.5764837+03:00"
     },
     "because": "Both utterances have entity 'next monday'.",
     "categories": [
