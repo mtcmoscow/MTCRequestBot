@@ -265,15 +265,14 @@ jobs:
     - name: Add dotnet Tools to Path
       run: echo "::add-path::$HOME/.dotnet/tools"
 
-    - name: Test Luis model with quality verification tests
-      run: dotnet nlu test -s luisV3 -u $UNIT_TEST_FILE -o F-results.json
+    - name: Test Luis model with quality verification tests      
+      run: dotnet nlu test -s luisV3 -u $UNIT_TEST_FILE -o results.json
       env:
         luisAppId: ${{ env.LUISAppId }}
         luisVersionId: ${{ env.LUISAppVersion }}
         luisDirectVersionPublish: true
         luisEndpointKey: ${{ env.LUISPredictionKey }}
         luisPredictionResourceName: ${{ secrets.AZURE_LUIS_PREDICTION_RESOURCE_NAME }}
-
     - name: download baseline
       if: env.BASELINE_CONTAINER_NAME != ''
       uses: azure/CLI@v1
