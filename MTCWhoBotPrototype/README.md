@@ -1,4 +1,4 @@
-# MTCWhoBotPrototype
+﻿# MTCWhoBotPrototype
 
 Bot Framework v4 core bot sample.
 
@@ -97,3 +97,37 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](htt
 - [Azure Portal](https://portal.azure.com)
 - [Language Understanding using LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/)
 - [Channels and Bot Connector Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-concepts?view=azure-bot-service-4.0)
+
+
+## Project structure
+
+The data files, DVC files, and results change as stages are created one by one.
+After cloning and using [`dvc pull`](https://man.dvc.org/pull) to download data
+tracked by DVC, the workspace should look like this:
+
+```console
+$ tree
+.
+├── README.md
+├── data                  # <-- Directory with raw and intermediate data
+│   ├── data.xml          # <-- Initial XML StackOverflow dataset (raw data)
+│   ├── data.xml.dvc      # <-- .dvc file - a placeholder/pointer to raw data
+│   ├── features          # <-- Extracted feature matrices
+│   │   ├── test.pkl
+│   │   └── train.pkl
+│   └── prepared          # <-- Processed dataset (split and TSV formatted)
+│       ├── test.tsv
+│       └── train.tsv
+├── dvc.lock
+├── MTCBot.AI             # <-- Luis DevOps best practicies, CI/CD with Unit and Verification tests.
+├── model.pkl             # <-- Trained model file
+├── params.yaml           # <-- Parameters file
+├── prc.json              # <-- Precision-recall curve data points
+├── scores.json           # <-- Binary classifier final metrics (e.g. AUC)
+└── src                   # <-- Source code to run the pipeline stages
+    ├── evaluate.py
+    ├── featurization.py
+    ├── prepare.py
+    ├── requirements.txt  # <-- Python dependencies needed in the project
+    └── train.py
+```
