@@ -13,7 +13,7 @@ env:
   # Set the name of the master LUIS app
   LUIS_MASTER_APP_NAME: LUISDevOps-master
   # If your repository is Private, set this to true
-  IS_PRIVATE_REPOSITORY: false
+  IS_PRIVATE_REPOSITORY: true
 
   # Set the path to the lu file for your LUIS app
   LU_FILE: MTCBot.AI/luis-app/model.lu
