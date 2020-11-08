@@ -18,7 +18,6 @@
     ]    
   },  
   {
-    {
     "text": "book mtc Moscow next monday",
     "intent": "MTCRequest",
     "entities": [
@@ -30,7 +29,6 @@
         "entityType": "datetimeV2",        
         "matchText": "next monday"
       }
-    ]    
-  } 
+    ]
   }
 ]
