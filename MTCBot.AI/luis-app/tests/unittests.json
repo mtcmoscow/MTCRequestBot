@@ -30,5 +30,19 @@
         "matchText": "next monday"
       }
     ]
+  },  
+  {
+    "text": "meeting in mtc moscow next monday",
+    "intent": "MTCRequest",
+    "entities": [
+      {
+        "entityType": "MTCLocation",        
+        "matchText":  "Moscow"
+      },      
+      {
+        "entityType": "datetimeV2",        
+        "matchText": "next monday"
+      }
+    ]
   }
 ]
