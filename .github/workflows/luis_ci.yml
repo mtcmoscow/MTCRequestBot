@@ -273,6 +273,7 @@ jobs:
         luisDirectVersionPublish: true
         luisEndpointKey: ${{ env.LUISPredictionKey }}
         luisPredictionResourceName: ${{ secrets.AZURE_LUIS_PREDICTION_RESOURCE_NAME }}
+    
     - name: download baseline
       if: env.BASELINE_CONTAINER_NAME != ''
       uses: azure/CLI@v1
@@ -308,7 +309,7 @@ jobs:
   # Job: Continuous deployment job for LUIS
   release:
     name: LUIS CD
-    needs: build
+    needs: LUIS_quality_testing
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
