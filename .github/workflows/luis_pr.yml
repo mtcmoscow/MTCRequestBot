@@ -130,8 +130,12 @@ jobs:
     - name: Analyze Unit test results
       id: analyze_unit_tests
       run:
-        echo "::set-output name=unittestresults::$(dotnet nlu compare -e $UNIT_TEST_FILE -a results.json --unit-test --output-folder unittest)\n"      
-
+        echo "::set-output name=unittestresults::$(dotnet nlu compare -e $UNIT_TEST_FILE -a results.json --unit-test --output-folder unittest)"      
+   
+    - name: Show Output
+      run: 
+        echo  ${{steps.analyze_unit_tests.outputs.unittestresults}}
+        
     - name: Create or Update Comment
       # You may pin to the exact commit or the version.
       # uses: peter-evans/create-or-update-comment@93b7c58cfab6e4355cd3027f73c7c731437e85fa
