@@ -1,6 +1,6 @@
 [
   {
-    "text": "i would  like to have a briefing in mtc Moscow next monday",
+    "text": "i would  like to have a briefing in mtc Moscow next monday, thanks!",
     "intent": "MTCRequest",
     "entities": [
       {
