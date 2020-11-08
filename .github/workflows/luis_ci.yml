@@ -165,16 +165,7 @@ jobs:
         luisVersionId: ${{ env.LUISAppVersion }}
         luisDirectVersionPublish: true
         luisEndpointKey: ${{ env.LUISPredictionKey }}
-        luisPredictionResourceName: ${{ secrets.AZURE_LUIS_PREDICTION_RESOURCE_NAME }}
-
-    - name: Super Test Luis model with quality verification tests
-      run: dotnet nlu test -s luisV3 -u $QUALITY_TEST_FILE -o F-results.json
-      env:
-        luisAppId: ${{ env.LUISAppId }}
-        luisVersionId: ${{ env.LUISAppVersion }}
-        luisDirectVersionPublish: true
-        luisEndpointKey: ${{ env.LUISPredictionKey }}
-        luisPredictionResourceName: ${{ secrets.AZURE_LUIS_PREDICTION_RESOURCE_NAME }}
+        luisPredictionResourceName: ${{ secrets.AZURE_LUIS_PREDICTION_RESOURCE_NAME }}   
 
     - name: Analyze Unit test results
       run: dotnet nlu compare -e $UNIT_TEST_FILE -a results.json --unit-test --output-folder unittest
@@ -255,12 +246,15 @@ jobs:
     - name: Bypass botframework-cli telemetry prompts, enable telemetry collection - set to false to disable telemetry collection
       run: echo "BF_CLI_TELEMETRY=true" >> $GITHUB_ENV
 
+    - name: Get "LUIS app Id
+      run: 
+        bf luis:application:list --subscriptionKey $LUISAuthoringKey  --endpoint $LUISAuthoringEndpoint
+        
     - name: Get master LUIS application ID
       run: |
         bf luis:application:list --subscriptionKey $LUISAuthoringKey  --endpoint $LUISAuthoringEndpoint | \
         jq -c '.[] | select(.name | . and contains('\"$LUIS_MASTER_APP_NAME\"')) | .id' | \
         xargs -I {} echo "LUISAppId={}" >> $GITHUB_ENV
-        echo "Found LUIS app: $LUISAppId"
 
     - name: Get LUIS latest version ID
       run: |
