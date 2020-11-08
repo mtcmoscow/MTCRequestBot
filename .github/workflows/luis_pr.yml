@@ -129,19 +129,21 @@ jobs:
 
     - name: Analyze Unit test results
       id: analyze_unit_tests
-      run:
+      run: |
         result=$(dotnet nlu compare -e $UNIT_TEST_FILE -a results.json --unit-test --output-folder unittest)
-        result="${result//'%'/'%25'}"
+        result="${result//'%'/'%25'}【7,6 m】"
         result="${result//$'\n'/'%0A'}"
         result="${result//$'\r'/'%0D'}"
         echo "::set-output name=unittestresults::$result"      
-           
-    - name: Create or Update Comment      
-      uses: peter-evans/create-or-update-comment@v1.4.3
-      with: 
-        issue-number: ${{ github.event.pull_request.number }}       
-        body: |
-            ${{steps.analyze_unit_tests.outputs.unittestresults}}  
+    - uses: marocchino/sticky-pull-request-comment@v2
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        header: test
+        message: |
+          ```
+          ${{ steps.analyze_unit_tests.outputs.unittestresults }}
+          ```     
+    
         
     - name: Archive Unit Test Results
       uses: actions/upload-artifact@v1
