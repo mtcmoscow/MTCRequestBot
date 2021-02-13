@@ -281,7 +281,7 @@ jobs:
       if: env.BASELINE_CONTAINER_NAME != ''
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.2.0
+        azcliversion: 2.19.1
         inlineScript: |
           az storage blob download  --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} --container-name ${{  env.BASELINE_CONTAINER_NAME  }}  --name statistics.json  --file baselinefile.json --auth-mode login
 
@@ -304,7 +304,7 @@ jobs:
     - name: upload statistics
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.2.0
+        azcliversion: 2.19.1
         inlineScript: |
           az storage container create  --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}  --name ${{ github.sha }}  --auth-mode login
           az storage blob upload  --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}  --container-name ${{ github.sha }} --name statistics.json --file statistics.json  --auth-mode login
