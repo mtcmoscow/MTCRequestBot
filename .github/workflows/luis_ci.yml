@@ -306,6 +306,7 @@ jobs:
         azcliversion: 2.19.1
         inlineScript: |
           az storage container create  --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}  --name ${{ github.sha }}  --auth-mode login
+          sleep 100
           az storage blob upload  --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}  --container-name ${{ github.sha }} --name statistics.json --file statistics.json  --auth-mode login
 
   # Job: Continuous deployment job for LUIS
