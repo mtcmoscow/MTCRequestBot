@@ -50,7 +50,7 @@ jobs:
       uses: gittools/actions/gitversion/execute@6dfe406
 
     - name: LUISAppVersion env
-      run: echo "::set-env name=LUISAppVersion::$GitVersion_SemVer"
+      run: echo "LUISAppVersion=$GitVersion_SemVer" >> $GITHUB_ENV
 
     - uses: azure/login@v1
       with:
