@@ -1,6 +1,6 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT license.
-name: LUIS-CI
+name: LUIS-CICD
 
 # Trigger the workflow on push to the master branch, and only for changes to lu or json files
 on:
@@ -13,7 +13,7 @@ on:
 
 env:
   # Set the name of the master LUIS app
-  LUIS_MASTER_APP_NAME: LUISDevOps-master
+  LUIS_MASTER_APP_NAME: MTCBotCICD
   # If your repository is Private, set this to true
   IS_PRIVATE_REPOSITORY: true
 
