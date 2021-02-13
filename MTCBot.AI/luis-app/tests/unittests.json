@@ -1,11 +1,11 @@
 [
   {
-    "text": "i would  like to have a briefing in mtc Moscow next monday",
+    "text": "i would  like to have a briefing in mtc Irvine next monday",
     "intent": "MTCRequest",
     "entities": [
       {
         "entityType": "MTCLocation",        
-        "matchText":  "Moscow"
+        "matchText":  "Irvine"
       },
       {
         "entityType": "MTCEngagementType",
