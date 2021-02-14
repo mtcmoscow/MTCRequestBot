@@ -310,7 +310,7 @@ jobs:
 
   # Job: Continuous deployment job for LUIS
   release:
-    name: LUIS CD to Stage
+    name: Deploy Model to Staging Slot
     needs: LUIS_quality_testing
     runs-on: ubuntu-latest
     environment: 
@@ -359,10 +359,10 @@ jobs:
         xargs -I {} echo "LUISAppVersion={}" >> $GITHUB_ENV
 
     - name: Publish LUIS to Staging
-      run: bf luis:application:publish --appId $LUISAppId --versionId $LUISAppVersion --staging true --endpoint $LUISAuthoringEndpoint --subscriptionKey $LUISAuthoringKey
+      run: bf luis:application:publish --appId $LUISAppId --versionId $LUISAppVersion --staging --endpoint $LUISAuthoringEndpoint --subscriptionKey $LUISAuthoringKey
   
   prod:
-    name: LUIS CD to Prod
+    name: Deploy Model to Production Slot
     needs: release
     runs-on: ubuntu-latest
     environment: 
@@ -410,6 +410,6 @@ jobs:
         cat luis_latest_version.json | jq '.[0].version' | \
         xargs -I {} echo "LUISAppVersion={}" >> $GITHUB_ENV
 
-    - name: Publish LUIS to Staging
-      run: bf luis:application:publish --appId $LUISAppId --versionId $LUISAppVersion --staging false --endpoint $LUISAuthoringEndpoint --subscriptionKey $LUISAuthoringKey
+    - name: Publish LUIS to Production Slot
+      run: bf luis:application:publish --appId $LUISAppId --versionId $LUISAppVersion --endpoint $LUISAuthoringEndpoint --subscriptionKey $LUISAuthoringKey
     
