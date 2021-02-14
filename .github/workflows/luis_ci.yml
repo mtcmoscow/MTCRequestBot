@@ -310,8 +310,11 @@ jobs:
 
   # Job: Continuous deployment job for LUIS
   release:
-    name: LUIS CD
+    name: LUIS CD to PROD
     needs: LUIS_quality_testing
+    environment: 
+      name: Prod
+      url: 'https://teams.microsoft.com/l/app/468a6043-0d15-4c63-8d4f-44cc0e0f6473?source=store-copy-link'
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
