@@ -102,6 +102,21 @@
 	- Calgary :
 	- Toronto Downtown :
 
+@ list Industry = 
+	- Automotive :
+		- auto
+	- Energy :
+		- oil
+		- gas
+	- Financial Services :
+		- financial
+	- Healthcare :
+	- Manufacturing :
+	- Media :
+		- Communication
+	- Public Sector :
+	- Retail :
+
 > # PREBUILT Entity definitions
 
 @ prebuilt datetimeV2
