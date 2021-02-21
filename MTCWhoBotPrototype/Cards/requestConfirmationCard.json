@@ -12,7 +12,7 @@
     },
     {
       "type": "Input.Text",
-      "placeholder": "Title",     
+      "placeholder": "Title",
       "style": "text",
       "maxLength": 0,
       "id": "Title",
@@ -25,6 +25,22 @@
       "maxLength": 0,
       "id": "OptId",
       "value": "${OppId}"
+    },
+    {
+      "type": "ActionSet",
+      "actions": [
+        {
+          "type": "Action.Submit",
+          "title": "Open Item",
+          "data": {
+            "msteams": {
+              "type": "task/fetch",
+              "text": "open opp"
+            },
+            "command":  "open opp"
+          }
+        }
+      ]
     },
     {
       "type": "Input.Text",
@@ -48,6 +64,7 @@
             {
               "type": "Input.ChoiceSet",
               "id": "MTCLocation",
+              "style": "filtered",
               "value": "${MTCLocation}",
               "choices": [
                 {
@@ -93,12 +110,11 @@
               "id": "StartDateDT",
               "value": "${startDate}"
             }
-          ]          
+          ]
         },
         {
           "type": "Column",
           "items": [
-
             {
               "type": "TextBlock",
               "text": "End Date",
@@ -110,10 +126,10 @@
               "id": "EndDateDT",
               "value": "${endDate}"
             }
-          ]         
+          ]
         }
       ]
-    },   
+    },
     {
       "type": "ColumnSet",
       "columns": [
@@ -167,13 +183,13 @@
           ]
         }
       ]
-    } 
+    }
   ],
   "actions": [
     {
       "type": "Action.Submit",
       "title": "Submit request"
-      
+
     }
   ]
 }

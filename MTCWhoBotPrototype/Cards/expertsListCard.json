@@ -1,0 +1,42 @@
+{  
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.2",
+    "body": [
+      {
+        "type": "TextBlock",
+        "text": "The following people know about 'bot':(AC with Persona Component)",
+        "weight": "bolder"
+      },
+      {
+        "type": "Component",
+        "name": "graph.microsoft.com/user",
+        "view": [ "thumbnail preview" ],
+        "properties": {
+          "displayName": "Michael Bondarevsky",
+          "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+          "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+        }
+      },
+      {
+        "type": "Component",
+        "name": "graph.microsoft.com/user",
+        "view": [ "compact" ],
+        "properties": {
+          "displayName": "Michael Bondarevsky",
+          "userPrincipalName": "mibon@microsoft.com",
+          "id": "67d716d7-e988-42a5-bdec-750212a4379d"
+        }
+      },
+      {
+        "type": "Component",
+        "name": "graph.microsoft.com/user",
+        "view": [ "thumbnail preview" ],
+        "properties": {
+          "displayName": "Michael Bondarevsky",
+          "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+          "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+        }
+      }      
+    ]  
+}

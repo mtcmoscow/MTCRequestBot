@@ -11,6 +11,9 @@ using Microsoft.Bot.Schema;
 
 namespace MTCWhoBotPrototype.Dialogs
 {
+    /// <summary>
+    /// Dialog for handling interruption.
+    /// </summary>
     public class CancelAndHelpDialog : ComponentDialog
     {
         private const string HelpMsgText = "Show help here";

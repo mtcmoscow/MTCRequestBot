@@ -1,0 +1,100 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Microsoft Technology Center. Envisioning Center",
+      "weight": "bolder"
+    },
+    {
+      "type": "Image",
+      "url": "https://mtcrequestbot20200907221020.azurewebsites.net/ec.png",
+      "msTeams": {
+        "allowExpand": true
+      }
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "size": "small",
+              "style": "person",
+              "type": "Image",
+              "url": "https://mtcwhobotprototyper0.azurewebsites.net/olegka.png"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Oleg Karacharov",
+              "weight": "bolder",
+              "wrap": true
+            },
+            {
+              "type": "TextBlock",
+              "spacing": "none",
+              "text": "Director, MTC Moscow",
+              "isSubtle": true,
+              "wrap": true
+            }
+          ]
+        }
+      ]
+    }
+    //,{
+    //  "type": "TextBlock",
+    //  "text": "Persona Component in ColumnSet",
+    //  "weight": "bolder"
+    //},
+    //{
+    //  "type": "ColumnSet",
+    //  "columns": [
+    //    {
+    //      "type": "Column",
+    //      "items": [
+    //        {
+    //          "type": "Component",
+    //          "name": "graph.microsoft.com/user",
+    //          "view": [ "compact" ],
+    //          "properties": {
+    //            "displayName": "Mikhail Bondarevsky",
+    //            "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+    //            "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+    //          }
+    //        }
+    //      ]
+    //    },
+    //    {
+    //      "type": "Column",
+    //      "items": [
+    //        {
+    //          "type": "TextBlock",
+    //          "text": "Azure, Teams Platform"
+    //        }
+    //      ]
+    //    }
+    //  ]
+    //}
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "New request"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Staff"
+    }
+  ]
+} 
+

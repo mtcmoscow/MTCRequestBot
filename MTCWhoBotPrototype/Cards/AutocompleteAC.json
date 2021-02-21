@@ -1,0 +1,609 @@
+﻿{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "style": "emphasis",
+  "body": [
+    {
+      "type": "Container",
+      "bleed": true,
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "auto",
+              "verticalContentAlignment": "center",
+              "items": [
+                {
+                  "type": "Image",
+                  "height": "30px",
+                  "url": "https://i.imgur.com/6JhSgmU.png",
+                  "altText": "Engage Logo"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "verticalContentAlignment": "center",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "All survey responses are anonymous. [Learn more](https://www.tinypulse.com)",
+                  "horizontalAlignment": "right",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+
+    },
+    {
+      "type": "Container",
+      "style": "default",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "horizontalAlignment": "center",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "48px",
+              "verticalContentAlignment": "center",
+              "items": [
+                {
+                  "type": "Image",
+                  "spacing": "large",
+                  "url": "https://messagecardplayground.azurewebsites.net/assets/TINYPulseQuestionIcon.png",
+                  "horizontalAlignment": "center",
+                  "altText": "Question"
+                }
+              ]
+            },
+            {
+
+              "type": "Column",
+              "width": "stretch",
+              "verticalContentAlignment": "center",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "spacing": "large",
+                  "size": "large",
+                  "text": "**Where do you want to eat for lunch?**",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Input.ChoiceSet",
+          "placeholder": "Select one or more options",
+          "style": "filtered",
+          "isMultiSelect": false,
+          "id": "choiceRestaurant",
+          "choices": [
+            {
+              "title": "13 Coins Restaurant",
+              "value": "13 Coins Restaurant"
+            },
+            {
+              "title": "3 Pigs Bar B-Q",
+              "value": "3 Pigs Bar B-Q"
+            },
+            {
+              "title": "47 North Bar + Bistro",
+              "value": "47 North Bar + Bistro"
+            },
+            {
+              "title": "520 Bar & Grill",
+              "value": "520 Bar & Grill"
+            },
+            {
+              "title": "777 Café",
+              "value": "777 Café"
+            },
+            {
+
+              "title": "Andiamo Ristorante",
+              "value": "Andiamo Ristorante"
+            },
+            {
+              "title": "Araya's Place",
+              "value": "Araya's Place"
+            },
+            {
+              "title": "Ascend Prime Steak & Sushi",
+              "value": "Ascend Prime Steak & Sushi"
+            },
+            {
+              "title": "Azteca",
+              "value": "Azteca"
+            },
+            {
+              "title": "B-Bar",
+              "value": "B-Bar"
+            },
+            {
+              "title": "Bake's Place | Bar & Bistro",
+              "value": "Bake's Place | Bar & Bistro"
+            },
+            {
+              "title": "Bambu Bellevue",
+              "value": "Bambu Bellevue"
+            },
+            {
+              "title": "Baron's Xi'an Kitchen and Bar",
+              "value": "Baron's Xi'an Kitchen and Bar"
+            },
+            {
+              "title": "Barrio Luchador",
+              "value": "Barrio Luchador"
+            },
+            {
+              "title": "Beecher's Handmade Cheese & Café Vita",
+              "value": "Beecher's Handmade Cheese & Café Vita"
+            },
+            {
+              "title": "Bellden Cafe",
+              "value": "Bellden Cafe"
+            },
+            {
+              "title": "Belle Pastry",
+              "value": "Belle Pastry"
+            },
+            {
+              "title": "Bellevue Brewing Company",
+              "value": "Bellevue Brewing Company"
+            },
+            {
+              "title": "Bellevue Grille",
+              "value": "Bellevue Grille"
+            },
+            {
+              "title": "Bhojan Xpress",
+              "value": "Bhojan Xpress"
+            },
+            {
+              "title": "Bird Pepper Thai Kitchen",
+              "value": "Bird Pepper Thai Kitchen"
+            },
+            {
+              "title": "Bis on Main",
+              "value": "Bis on Main"
+            },
+            {
+              "title": "Black Bottle",
+              "value": "Black Bottle"
+            },
+            {
+              "title": "Blank Space Cafe",
+              "value": "Blank Space Cafe"
+            },
+            {
+              "title": "Blazing Bagels",
+              "value": "Blazing Bagels"
+            },
+            {
+              "title": "Boiling Point",
+              "value": "Boiling Point"
+            },
+            {
+              "title": "Bowl Gogi",
+              "value": "Bowl Gogi"
+            },
+            {
+              "title": "Broiler Bay",
+              "value": "Broiler Bay"
+            },
+            {
+              "title": "Burger Brawler",
+              "value": "Burger Brawler"
+            },
+            {
+              "title": "Cactus",
+              "value": "Cactus"
+            },
+            {
+              "title": "Castilla Restaurant and Tapas Bar",
+              "value": "Castilla Restaurant and Tapas Bar"
+            },
+            {
+              "title": "Central Bar + Restaurant",
+              "value": "Central Bar + Restaurant"
+            },
+            {
+              "title": "Cepae",
+              "value": "Cepae"
+            },
+            {
+              "title": "The Cheesecake Factory",
+              "value": "The Cheesecake Factory"
+            },
+            {
+              "title": "Chipotle Mexican Grill",
+              "value": "Chipotle Mexican Grill"
+            },
+            {
+              "title": "Chutney's",
+              "value": "Chutney's"
+            },
+            {
+              "title": "Cielo Concina Mexicana",
+              "value": "Cielo Concina Mexicana"
+            },
+            {
+              "title": "Cinnabon",
+              "value": "Cinnabon"
+            },
+            {
+              "title": "City Soups at Key Center",
+              "value": "City Soups at Key Center"
+            },
+            {
+              "title": "Civility & Unrest",
+              "value": "Civility & Unrest"
+            },
+            {
+              "title": "CoCo Fresh Tea & Juice",
+              "value": "CoCo Fresh Tea & Juice"
+            },
+            {
+              "title": "Coco Izkaya",
+              "value": "Coco Izkaya"
+            },
+            {
+              "title": "Corporate Café/Deli",
+              "value": "Corporate Café/Deli"
+            },
+            {
+              "title": "Crosta",
+              "value": "Crosta"
+            },
+            {
+              "title": "Cypress Lounge & Wine Bar",
+              "value": "Cypress Lounge & Wine Bar"
+            },
+            {
+              "title": "Daniel's Broiler",
+              "value": "Daniel's Broiler"
+            },
+            {
+              "title": "Day Break Café",
+              "value": "Day Break Café"
+            },
+            {
+              "title": "Department Bento",
+              "value": "Department Bento"
+            },
+            {
+              "title": "Din Tai Fung",
+              "value": "Din Tai Fung"
+            },
+            {
+              "title": "Domino's Pizza",
+              "value": "Domino's Pizza"
+            },
+            {
+              "title": "Dote Coffee Bar",
+              "value": "Dote Coffee Bar"
+            },
+            {
+              "title": "Drive Thru Boba",
+              "value": "Drive Thru Boba"
+            },
+            {
+              "title": "Duke's Chowder House",
+              "value": "Duke's Chowder House"
+            },
+            {
+              "title": "Earl's Restaurant + Bar",
+              "value": "Earl's Restaurant + Bar"
+            },
+            {
+              "title": "El Gaucho Bellevue",
+              "value": "El Gaucho Bellevue"
+            },
+            {
+              "title": "Eques",
+              "value": "Eques"
+            },
+            {
+              "title": "Facing East Taiwanese Restaurant",
+              "value": "Facing East Taiwanese Restaurant"
+            },
+            {
+              "title": "Fern Thai on Main",
+              "value": "Fern Thai on Main"
+            },
+            {
+              "title": "Fika House Kafe",
+              "value": "Fika House Kafe"
+            },
+            {
+              "title": "Flo Japanese Restaurant",
+              "value": "Flo Japanese Restaurant"
+            },
+            {
+              "title": "Fogo De Chao",
+              "value": "Fogo De Chao"
+            },
+            {
+              "title": "FogRose",
+              "value": "FogRose"
+            },
+            {
+              "title": "Fonte Café",
+              "value": "Fonte Café"
+            },
+            {
+              "title": "Four Generals Brewing",
+              "value": "Four Generals Brewing"
+            },
+            {
+              "title": "Fresh N More",
+              "value": "Fresh N More"
+            },
+            {
+              "title": "Freshii",
+              "value": "Freshii"
+            },
+            {
+
+              "title": "Garlic Crush",
+
+              "value": "Garlic Crush"
+
+            },
+            {
+
+              "title": "Gilbert's On Main",
+
+              "value": "Gilbert's On Main"
+
+            },
+            {
+
+              "title": "Ginza Japanese Restaurant",
+
+              "value": "Ginza Japanese Restaurant"
+
+            },
+            {
+
+              "title": "Godiva Chocolatier",
+
+              "value": "Godiva Chocolatier"
+
+            },
+            {
+
+              "title": "Great State Burger",
+
+              "value": "Great State Burger"
+
+            },
+            {
+
+              "title": "Gyro Express",
+
+              "value": "Gyro Express"
+
+            },
+            {
+
+              "title": "Habitant",
+
+              "value": "Habitant"
+
+            },
+            {
+
+              "title": "Ishoni Yakiniku",
+
+              "value": "Ishoni Yakiniku"
+
+            },
+            {
+
+              "title": "Istanbul Cuisine Cafe",
+
+              "value": "Istanbul Cuisine Cafe"
+
+            },
+            {
+
+              "title": "Jack in the Box",
+
+              "value": "Jack in the Box"
+
+            },
+            {
+
+              "title": "Jamba Juice",
+
+              "value": "Jamba Juice"
+
+            },
+            {
+
+              "title": "Japonessa Sushi Cocina",
+
+              "value": "Japonessa Sushi Cocina"
+
+            },
+            {
+
+              "title": "Jesters",
+
+              "value": "Jesters"
+
+            },
+            {
+
+              "title": "Jinya Ramen Bar",
+
+              "value": "Jinya Ramen Bar"
+
+            },
+            {
+
+              "title": "Joey Bellevue",
+
+              "value": "Joey Bellevue"
+
+            },
+            {
+
+              "title": "John Howie Steak",
+
+              "value": "John Howie Steak"
+
+            },
+            {
+
+              "title": "Juju Beet",
+
+              "value": "Juju Beet"
+
+            },
+            {
+
+              "title": "Just Poke",
+
+              "value": "Just Poke"
+
+            },
+            {
+
+              "title": "Kizuki Ramen",
+
+              "value": "Kizuki Ramen"
+
+            },
+            {
+
+              "title": "Kung Fu Tea",
+
+              "value": "Kung Fu Tea"
+
+            },
+            {
+
+              "title": "La Bu La",
+
+              "value": "La Bu La"
+
+            },
+            {
+
+              "title": "La Parisienne French Bakery",
+
+              "value": "La Parisienne French Bakery"
+
+            },
+            {
+
+              "title": "The Lakehouse",
+
+              "value": "The Lakehouse"
+
+            },
+            {
+
+              "title": "LifeCafe",
+
+              "value": "LifeCafe"
+
+            }
+          ]
+
+        },
+        {
+
+          "type": "ActionSet",
+
+          "horizontalAlignment": "center",
+
+          "actions": [
+            {
+
+              "type": "Action.Submit",
+
+              "title": "Respond anonymously",
+
+              "data": {
+
+                "msteams": {
+
+                  "type": "invoke",
+
+                  "value": {
+
+                    "type": "task/submit"
+
+                  }
+
+                }
+
+              }
+
+            }
+          ]
+
+        }
+      ]
+
+    },
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "verticalContentAlignment": "center",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "**Streak:**"
+                },
+                {
+                  "type": "TextBlock",
+                  "spacing": "none",
+                  "text": "**0** survey(s) in a row"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "verticalContentAlignment": "center",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Having trouble?",
+                  "horizontalAlignment": "right"
+                },
+                {
+                  "type": "TextBlock",
+                  "spacing": "none",
+                  "text": "[Click here](https://www.tinypulse.com) to go to TINYPulse to respond",
+                  "horizontalAlignment": "right",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+} 

@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using AdaptiveCards.Templating;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
@@ -18,6 +19,7 @@ using Microsoft.Bot.Schema.Teams;
 using Microsoft.Extensions.Logging;
 using Microsoft.Recognizers.Text.DataTypes.TimexExpression;
 using MTCRequestBot;
+using MTCRequestBot.Cards;
 using MTCRequestBot.CognitiveModels;
 using MTCWhoBotPrototype.Helpers;
 //using MTCWhoBotPrototype.CognitiveModels;
@@ -79,7 +81,7 @@ namespace MTCWhoBotPrototype.Dialogs
             //reply.Attachments.Add(AdaptiveCardHelper.GetMTCHeroCard().ToAttachment());
             //reply.Attachments.Add(AdaptiveCardHelper.GetThumbnailCard().ToAttachment());
             //reply.Attachments.Add(AdaptiveCardHelper.GetReceiptCard().ToAttachment()); // Doesn't support msteams???
-            await stepContext.Context.SendActivityAsync(reply, cancellationToken);
+            //await stepContext.Context.SendActivityAsync(reply, cancellationToken);
 
             
 
@@ -120,13 +122,142 @@ namespace MTCWhoBotPrototype.Dialogs
             }
             LogActivityTelemetry(stepContext.Context.Activity);
 
-            //string teamId2 = "19:31780574632d42feafc9319a9db6d627@thread.skype"; // ParseTeamIdFromDeepLink("https://teams.microsoft.com/l/team/19%3ad6104fe56678426798ec162ecb9bb6ab%40thread.tacv2/conversations?groupId=f6131445-9f5e-4ac6-b9a3-242273231818&tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47");
+            //string teamId2 = TeamsHelper.ParseTeamIdFromDeepLink(@"https://teams.microsoft.com/l/team/19%3a31780574632d42feafc9319a9db6d627%40thread.skype/conversations?groupId=30f22177-36f9-4527-8879-d1cb5e6f6928&tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47");        
             //var confirmationCard2 = new AdaptiveCardHelper().CreateAdaptiveCardAttachment("requestCard");
+
             //var resourceResponse2 = await TeamsHelper.SendCardToTeamAsync(stepContext.Context, confirmationCard2, teamId2, cancellationToken).ConfigureAwait(false);
+            //await stepContext.Context.SendActivityAsync(MessageFactory.Attachment(confirmationCard2), cancellationToken);
+
+            //R0https://teams.microsoft.com/l/team/19%3A4aac7a7ca1b643d58e7df45dbf88aafa%40thread.tacv2/conversations?groupId=ada25de6-760b-41c9-b651-323c5cc1a87e&tenantId=a028b92b-f807-4d50-a2b4-5235dd043056
+            //MSFThttps://teams.microsoft.com/l/team/19%3a31780574632d42feafc9319a9db6d627%40thread.skype/conversations?groupId=30f22177-36f9-4527-8879-d1cb5e6f6928&tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47
+            //var confirmationCard3 = new AdaptiveCardHelper().CreateAdaptiveCardAttachment("requestCard");
+            //var resourceResponse2 = await TeamsHelper.SendCardToTeamAsync(stepContext.Context, confirmationCard2, teamId2, cancellationToken).ConfigureAwait(false);
+            //await stepContext.Context.SendActivityAsync(MessageFactory.Attachment(confirmationCard3), cancellationToken);
+
+            //var confirmationCard4 = new AdaptiveCardHelper().CreateAdaptiveCardAttachment("requestNotificationCard");
+            //var resourceResponse2 = await TeamsHelper.SendCardToTeamAsync(stepContext.Context, confirmationCard4, teamId2, cancellationToken).ConfigureAwait(false);
+            //await stepContext.Context.SendActivityAsync(MessageFactory.Attachment(confirmationCard4), cancellationToken);
+                     
+
+            if (stepContext.Context.Activity.Text.ToLower().Contains("retail"))
+            {
+                var people = new List<ListItemBase>();
+                var pp = await OneMTCApiHelper.GetAll();
+                var items = pp.Users;
+                var industrySME = from ta in items
+                                  where ta.Industry.ToLower().Contains("retail")
+                                  select ta;
+
+                foreach (var item in industrySME)
+                {
+                    people.Add(new PersonListItem()
+                    {
+                        ID = item.Alias + "@microsoft.com",
+                        Title = item.FullName + " (" + item.Location + ")",
+                        Subtitle = item.Qualifier,
+                        Tap = new CardAction() { Type = ActionTypes.ImBack, Value = item.Alias + "@microsoft.com" }
+                    });
+                }
+
+                var attachmentList = new Attachment()
+                {
+                    ContentType = ListCard.ContentType,
+                    Content = new ListCard
+                    {
+                        Title = "The following people are retail industry experts:",
+                        ListItems = people                        
+                    }
+                };
+                var responseActivityList = stepContext.Context.Activity.CreateReply();
+                responseActivityList.TextFormat = TextFormatTypes.Markdown;
+                responseActivityList.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+                responseActivityList.Attachments.Add(attachmentList);
+                await stepContext.Context.SendActivityAsync(responseActivityList);
+
+                //var expertsCard = new AdaptiveCardHelper().CreateAdaptiveCardAttachment("expertsListCard");
+                //await stepContext.Context.SendActivityAsync(MessageFactory.Attachment(expertsCard), cancellationToken);
+                return await stepContext.NextAsync(null, cancellationToken);
+            }
+
+            else if (stepContext.Context.Activity.Text.Contains("power bi") && stepContext.Context.Activity.Text.Contains("moscow"))
+            {
+                var ta = new PersonCard()
+                {
+                    Upn = "Anna.Sviridova@microsoft.com",
+                    JobTitle = "TA from MTC Moscow",
+                    Buttons = new List<CardAction>()
+                            {
+                                new CardAction() { Title = "Request", Type = ActionTypes.ImBack, Value = "i would like to have a briefing in mtc moscow next friday" },
+                                new CardAction() { Title = "MTC Moscow Info", Type = ActionTypes.ImBack, Value = "show mtc facility information" }
+                            },
+                };
+
+                var responseActivity = stepContext.Context.Activity.CreateReply();
+                responseActivity.TextFormat = TextFormatTypes.Markdown;                
+                responseActivity.Attachments.Add(ta.ToAttachment());
+                await stepContext.Context.SendActivityAsync(responseActivity);
+                return await stepContext.NextAsync(null, cancellationToken);
+            }            
+            else if (stepContext.Context.Activity.Text.Contains("power bi"))
+            {
+                var people = new List<ListItemBase>()
+                        {
+                            //new SectionListItem() { Title = "MTC Director" },
+                            //new PersonListItem() {ID = "olegka@microsoft.com", Title = "Oleg Karacharov", Subtitle = "MTC Director - Russia, Moscow", Tap = new CardAction() { Type = ActionTypes.ImBack, Value = "whois gsheldon@microsoft.com"} },
+                            //new SectionListItem() { Title = "MTC Moscow TAs" },
+                            new PersonListItem() {ID = "Anna.Sviridova@microsoft.com", Title = "Anna Sviridova (Moscow)", Subtitle = "Power BI, AI, SQL Server", Tap = new CardAction() { Type = ActionTypes.ImBack, Value = "power bi in moscow"} },
+                            
+                            //new PersonListItem() {ID = "v-seziuz@microsoft.com", Title = "Sergei Ziuzev", Subtitle = "Briefing Coordinator, IoT", Tap = new CardAction() { Type = ActionTypes.ImBack, Value = "whois vchawla@microsoft.com"} }
+                        };
+                var pp = await OneMTCApiHelper.GetAll();
+                var items = pp.Users;
+                var appDevs = from s in items
+                              where s.Skills.Contains("Power BI")
+                              select s;
+
+
+                foreach (var item in appDevs)
+                {
+                    people.Add(new PersonListItem()
+                    {
+                        ID = item.Alias + "@microsoft.com", 
+                        Title = item.FullName + " (" + item.Location + ")", 
+                        Subtitle = item.Qualifier, 
+                        Tap = new CardAction() { Type = ActionTypes.ImBack, Value = item.Alias + "@microsoft.com" } 
+                    });
+                }
+
+                var attachmentList = new Attachment()
+                {
+                    ContentType = ListCard.ContentType,
+                    Content = new ListCard
+                    {
+                        Title = "The following people know about 'Power BI'(list-card):",
+                        ListItems = people                        
+                    }
+                };
+                var responseActivityList = stepContext.Context.Activity.CreateReply();
+                responseActivityList.TextFormat = TextFormatTypes.Markdown;
+                responseActivityList.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+                responseActivityList.Attachments.Add(attachmentList);
+                await stepContext.Context.SendActivityAsync(responseActivityList);
+
+                //var expertsCard = new AdaptiveCardHelper().CreateAdaptiveCardAttachment("expertsListCard");
+                //await stepContext.Context.SendActivityAsync(MessageFactory.Attachment(expertsCard), cancellationToken);
+                return await stepContext.NextAsync(null, cancellationToken);
+            }
+            if (stepContext.Context.Activity.Text.Contains("facility"))
+            {
+                var expertsCard = new AdaptiveCardHelper().CreateAdaptiveCardAttachment("mtcInfoCard");
+                await stepContext.Context.SendActivityAsync(MessageFactory.Attachment(expertsCard), cancellationToken);
+                return await stepContext.NextAsync(null, cancellationToken);
+            }
 
             stepContext.Context.Activity.Text 
                 = await _translator.TranslateAsync(stepContext.Context.Activity.Text, 
                 /*TranslationSettings.DefaultLanguage*/"en", cancellationToken);
+
+            
 
             // Call LUIS and gather any potential mtc request details. (Note the TurnContext has the response to the prompt.)
             MTCRequest luisResult = await _luisRecognizer.RecognizeAsync<MTCRequest>(stepContext.Context, cancellationToken);
@@ -137,7 +268,8 @@ namespace MTCWhoBotPrototype.Dialogs
                     {
                         Location = luisResult.Location,
                         EngagementType = luisResult.EngagementType,
-                        Date = luisResult.Date
+                        Date = luisResult.Date,
+                        LeadTA = "mibon@microsoft.com"
                     };
                     return await stepContext.BeginDialogAsync(nameof(MTCRequestDialog), mtcRequestDetail, cancellationToken);
 
@@ -170,9 +302,9 @@ namespace MTCWhoBotPrototype.Dialogs
 
                     break;
 
-                default:                  
-                    string teamId = "19:31780574632d42feafc9319a9db6d627@thread.skype"; // ParseTeamIdFromDeepLink("https://teams.microsoft.com/l/team/19%3ad6104fe56678426798ec162ecb9bb6ab%40thread.tacv2/conversations?groupId=f6131445-9f5e-4ac6-b9a3-242273231818&tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47");
-                    var confirmationCard = new AdaptiveCardHelper().CreateAdaptiveCardAttachment("requestCard");
+                default:
+                    //string teamId = "19%3A4aac7a7ca1b643d58e7df45dbf88aafa%40thread.tacv2";//"19:31780574632d42feafc9319a9db6d627@thread.skype"; // ParseTeamIdFromDeepLink("https://teams.microsoft.com/l/team/19%3ad6104fe56678426798ec162ecb9bb6ab%40thread.tacv2/conversations?groupId=f6131445-9f5e-4ac6-b9a3-242273231818&tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47");
+                    //var confirmationCard = new AdaptiveCardHelper().CreateAdaptiveCardAttachment("newRequestNotificationCard");
                     //var resourceResponse = await TeamsHelper.SendCardToTeamAsync(stepContext.Context, confirmationCard, teamId, cancellationToken).ConfigureAwait(false);
                     
                     // Catch all for unhandled intents

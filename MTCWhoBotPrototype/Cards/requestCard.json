@@ -17,7 +17,7 @@
                   "type": "TextBlock",
                   "size": "Large",
                   "weight": "Bolder",
-                  "text": "**EXPENSE APPROVAL**"
+                  "text": "**REQUEST APPROVAL**"
                 }
               ],
               "width": "stretch"
@@ -51,7 +51,7 @@
                 {
                   "type": "TextBlock",
                   "size": "ExtraLarge",
-                  "text": "Trip to UAE",
+                  "text": "Contoso",
                   "wrap": true
                 }
               ],
@@ -65,7 +65,7 @@
                   "actions": [
                     {
                       "type": "Action.OpenUrl",
-                      "title": "EXPORT AS PDF",
+                      "title": "MSX",
                       "url": "https://adaptivecards.io"
                     }
                   ]
@@ -81,7 +81,7 @@
           "size": "Small",
           "weight": "Bolder",
           "color": "Accent",
-          "text": "[ER-13052](https://adaptivecards.io)"
+          "text": "[1b$ deal](https://adaptivecards.io)"
         },
         {
           "type": "FactSet",
@@ -89,7 +89,7 @@
           "facts": [
             {
               "title": "Submitted By",
-              "value": "<at>Mikhail Bondarevsky</at>  2020-07-15T18:33:12+0800"
+              "value": "<at>Mikhail Bondarevsky</at> 2020-07-15T"
             },
             {
               "title": "Submitted On",
@@ -114,10 +114,20 @@
             {
               "type": "Column",
               "items": [
+                //{
+                //  "type": "TextBlock",
+                //  "weight": "Bolder",
+                //  "text": "DATE"
+                //},
                 {
-                  "type": "TextBlock",
-                  "weight": "Bolder",
-                  "text": "DATE"
+                  "type": "Component",
+                  "name": "graph.microsoft.com/user",
+                  "view": [ "compact" ],
+                  "properties": {
+                    "displayName": "fakeMichael Bondarevsky",    
+                    "userPrincipalName": "mibon2@microsoft.com", // wrong UPN
+                    "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28" // valid AAD ID
+                  }
                 }
               ],
               "width": "auto"

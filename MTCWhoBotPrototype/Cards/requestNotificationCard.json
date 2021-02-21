@@ -1,0 +1,73 @@
+{
+  "content": {
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.2",
+    "body": [
+      {
+        "type": "TextBlock",
+        "text": "Multiple Users Component",
+        "weight": "bolder"
+      },
+      {
+        "type": "Component",
+        "name": "graph.microsoft.com/users",
+        "view": [ "compact", "thumbnail preview" ],
+        "properties": {
+          "users": [
+            {
+              "displayName": "Megan Bowen",
+              "userPrincipalName": "mibon@microsoft.com",
+              "id": "48d31887-5fad-4d73-a9f5-3c356e68a038"
+            },
+            {
+              "displayName": "Adele Vegus",
+              "userPrincipalName": "olegka@microsoft.com",
+              "id": "2A0BDE93-04EE-4B51-8700-61D5707683B7"
+            }
+          ]
+        }
+      },
+      {
+        "type": "TextBlock",
+        "text": "Multiple Users Component with empty or null list of users",
+        "weight": "bolder"
+      },
+      {
+        "type": "Component",
+        "name": "graph.microsoft.com/users",
+        "view": [ "compact", "thumbnail preview" ],
+        "properties": {}
+      },
+      {
+        "type": "Component",
+        "name": "graph.microsoft.com/users",
+        "view": [ "compact", "thumbnail preview" ],
+        "properties": {
+          "users": []
+        }
+      },
+      {
+        "type": "TextBlock",
+        "text": "Single user Component",
+        "weight": "bolder"
+      },
+      {
+        "type": "Component",
+        "name": "graph.microsoft.com/user",
+        "view": [ "compact" ],
+        "properties": {
+          "displayName": "Adele Vegus",
+          "userPrincipalName": "AdeleV@M365x214355.onmicrosoft.com",
+          "id": "2A0BDE93-04EE-4B51-8700-61D5707683B7"
+        }
+      },
+      {
+        "type": "TextBlock",
+        "text": "Persona Component in ColumnSet",
+        "weight": "bolder"
+      }
+    ]
+  },
+  "contentType": "application/vnd.microsoft.card.adaptive"
+}

@@ -5,8 +5,10 @@ using Microsoft.Bot.Schema.Teams;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace MTCWhoBotPrototype.Helpers
 {
@@ -17,7 +19,7 @@ namespace MTCWhoBotPrototype.Helpers
         /// </summary>
         /// <param name="teamIdDeepLink">Deep link to get the team id.</param>
         /// <returns>A team id from the deep link URL.</returns>
-        private static string ParseTeamIdFromDeepLink(string teamIdDeepLink)
+        public static string ParseTeamIdFromDeepLink(string teamIdDeepLink)
         {
             // team id regex match
             // for a pattern like https://teams.microsoft.com/l/team/19%3a64c719819fb1412db8a28fd4a30b581a%40thread.tacv2/conversations?groupId=53b4782c-7c98-4449-993a-441870d10af9&tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47
@@ -30,6 +32,8 @@ namespace MTCWhoBotPrototype.Helpers
 
             return System.Web.HttpUtility.UrlDecode(match.Groups[1].Value);
         }
+
+        
 
 
         /// <summary>

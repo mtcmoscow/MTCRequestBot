@@ -11,5 +11,6 @@ namespace MTCWhoBotPrototype.Model
         public string Location { get; set; }
         public string EngagementType { get; set; }
         public string Date { get; set; }
+        public string LeadTA { get; set; }
     }
 }

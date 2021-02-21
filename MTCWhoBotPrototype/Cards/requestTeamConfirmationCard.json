@@ -1,0 +1,204 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "TextBlock",
+      "size": "Medium",
+      "weight": "Bolder",
+      "text": "Engagement Confirmation",
+      "horizontalAlignment": "Center"
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Requestor:"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "Component",
+              "name": "graph.microsoft.com/user",
+              "view": [ "thumbnail preview" ],
+              "properties": {
+                "displayName": "Michael Bondarevsky",
+                "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+                "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+              }
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Account Manager"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Approvers:"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "Component",
+              "name": "graph.microsoft.com/users",
+              "view": [ "compact" ],
+              "properties": {
+                "users": [
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+                    "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+                  },
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+                    "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+                  },
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+                    "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+                  },
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+                    "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+                  },
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+                    "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+                  },
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+                    "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+                  },
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+                    "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+                  },
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+                    "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+                  },
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+                    "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+                  },
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+                    "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+                  },
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+                    "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+                  },
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+                    "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+                  },
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+                    "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+                  },
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+                    "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+                  },
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+                    "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+                  },
+                  {
+                    "displayName": "Michael Bondarevsky",
+                    "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+                    "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Input.Text",
+      "placeholder": "Title",
+      "style": "text",
+      "maxLength": 0,
+      "id": "Title",
+      "value": "Teams platform rapid prototype for Contoso Inc."
+    },
+    {
+      "type": "Input.Text",
+      "placeholder": "Opp Id",
+      "style": "text",
+      "maxLength": 0,
+      "id": "OptId",
+      "value": "xxx-xxxx-xxxx-xxx"
+    },
+    {
+      "type": "Input.Text",
+      "placeholder": "Meeting Goals",
+      "style": "text",
+      "isMultiline": true,
+      "maxLength": 0,
+      "id": "MeetingGoals",
+      "value": "Buid MS Teams app (MVP) for customer."
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Approve"
+
+    }
+  ]
+  
+}

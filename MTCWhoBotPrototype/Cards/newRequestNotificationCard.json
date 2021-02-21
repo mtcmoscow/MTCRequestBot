@@ -1,0 +1,181 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.3",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Single Users Component in a list",
+      "weight": "bolder"
+    },
+    {
+      "type": "Component",
+      "name": "graph.microsoft.com/user",
+      "view": [ "thumbnail preview" ],
+      "properties": {
+        "displayName": "Michael Bondarevsky",
+        "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+        "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+      }
+    },    
+    {
+      "type": "Component",
+      "name": "graph.microsoft.com/user",
+      "view": [ "compact" ],
+      "properties": {
+        "displayName": "Michael Bondarevsky",
+        "userPrincipalName": "mibon@microsoft.com",
+        "id": "67d716d7-e988-42a5-bdec-750212a4379d"
+      }
+    },
+    {
+      "type": "Component",
+      "name": "graph.microsoft.com/user",
+      "view": [ "thumbnail preview" ],
+      "properties": {
+        "displayName": "Michael Bondarevsky",
+        "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+        "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+      }
+    },
+    {
+      "type": "Component",
+      "name": "graph.microsoft.com/user",
+      "view": [ "compact" ],
+      "properties": {
+        "displayName": "Michael Bondarevsky",
+        "userPrincipalName": "olegka@microsoft.com",
+        "id": "7b22a5ac-062e-4556-b646-c7586f2e2434"
+      }
+    },       
+    {
+      "type": "TextBlock",
+      "text": "Multiple Users Component aka Person Set",
+      "weight": "bolder"
+    },
+    {
+      "type": "Component",
+      "name": "graph.microsoft.com/users",
+      "view": [ "compact" ],
+      "properties": {
+        "users": [
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+            "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+          },
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+            "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+          },
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+            "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+          },
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+            "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+          },
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+            "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+          },
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+            "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+          },
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+            "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+          },
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+            "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+          },
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+            "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+          },
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+            "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+          },
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+            "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+          },
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+            "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+          },
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+            "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+          },
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+            "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+          },
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+            "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+          },
+          {
+            "displayName": "Michael Bondarevsky",
+            "userPrincipalName": "LidiaH@M365B899082.OnMicrosoft.com",
+            "id": "c2b9f060-52d5-43a1-a30f-8507efed7a28"
+          }
+        ]
+      }
+    },
+    {
+      "type": "TextBlock",
+      "text": "Persona Component in ColumnSet",
+      "weight": "bolder"
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Requestor:"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "Component",
+              "name": "graph.microsoft.com/user",
+              "view": [ "thumbnail preview" ],
+              "properties": {
+                "displayName": "Michael Bondarevsky",
+                "userPrincipalName": "mibon@M365B899082.onmicrosoft.com",
+                "id": "f5a0c8e8-7e9f-4b0e-bc53-ba163a41c8ad"
+              }
+            }
+          ]
+        }        
+      ]
+    }
+  ]
+} 
+

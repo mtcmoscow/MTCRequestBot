@@ -42,6 +42,7 @@ namespace MTCWhoBotPrototype.Dialogs
                     LocationStepAsync,                   
                     EngagementTypeStepAsync,
                     DateStepAsync,
+                    LeadTAStepAsync,
                     ConfirmStepAsync,                    
                     HandleConfirmationScreenResponseAsync
                 }));
@@ -258,7 +259,7 @@ namespace MTCWhoBotPrototype.Dialogs
             {
                 requestDetails.EngagementType = ((FoundChoice)stepCtx.Result).Value.ToLower();
             }
-            
+
 
             if (requestDetails.Date == null || IsAmbiguous(requestDetails.Date))
             {
@@ -268,14 +269,80 @@ namespace MTCWhoBotPrototype.Dialogs
             return await stepCtx.NextAsync(requestDetails.Date, cancelToken);
         }
 
-        private async Task<DialogTurnResult> ConfirmStepAsync(WaterfallStepContext stepCtx, CancellationToken cancelToken)
+        private async Task<DialogTurnResult> LeadTAStepAsync(WaterfallStepContext stepCtx, CancellationToken cancelToken)
         {
             var requestDetails = (MTCRequestDetail)stepCtx.Options;
             if (requestDetails.Date == null)
             {
                 requestDetails.Date = (string)stepCtx.Result;
             }
-            
+
+
+
+            if (requestDetails.LeadTA == null)
+            {
+                var choices = new[] { "Mikhail Bondarevsky", "ivabu@microsoft.com", "Anna.Sviridova@microsoft.com" };   
+
+                var listItemsWithIcons2 = new Attachment()
+                {
+                    ContentType = ListCard.ContentType,
+                    
+                    Content = new MTCRequestBot.Cards.ListCard()
+                    {
+                        Title = "Select MTC-Lead TA:",
+                        ListItems = new List<ListItemBase>()
+                        {
+                            //new SectionListItem() { Title = "MTC Director" },
+                            //new PersonListItem() {ID = "olegka@microsoft.com", Title = "Oleg Karacharov", Subtitle = "MTC Director - Russia, Moscow", Tap = new CardAction() { Type = ActionTypes.ImBack, Value = "whois gsheldon@microsoft.com"} },
+                            //new SectionListItem() { Title = "MTC Moscow TAs" },
+                            new PersonListItem() 
+                            {ID = "mibon@microsoft.com", Title = "Mikhail Bondarevsky", 
+                                Subtitle = "Azure App Dev, GitHub, Teams Platform, Power Platform", 
+                                Tap = new CardAction() 
+                                {
+                                    Title = "Mikhail Bondarevsky",
+                                    Text = "Mikhail Bondarevsky",
+                                    Type = ActionTypes.ImBack,
+                                    Value = "Mikhail Bondarevsky"
+                                } 
+                            },
+                            new PersonListItem() {ID = "ivabu@microsoft.com", Title = "Ivan Budylin", Subtitle = "Modern Workplace, Security",
+                                Tap = new CardAction() { 
+                                    Type = ActionTypes.ImBack, Value = "ivabu@microsoft.com"
+                                } 
+                            },
+                            new PersonListItem() {ID = "Anna.Sviridova@microsoft.com", Title = "Anna Sviridova", Subtitle = "Power BI, AI, SQL Server", Tap = new CardAction() { Type = ActionTypes.ImBack, Value = "Anna.Sviridova@microsoft.com"} },
+                            //new PersonListItem() {ID = "v-seziuz@microsoft.com", Title = "Sergei Ziuzev", Subtitle = "Briefing Coordinator, IoT", Tap = new CardAction() { Type = ActionTypes.ImBack, Value = "whois vchawla@microsoft.com"} }
+                        },
+                        //Buttons = new List<CardAction>()
+                        //    {
+                        //        new CardAction() { Title = "Select", Type = ActionTypes.ImBack, Value = "whois" },
+                        //        new CardAction() { Title = "MessageBack", Type = ActionTypes.MessageBack, DisplayText = "display text", Value = "{\"invokeKey\":\"invokeValue\"}" }
+                        //    },
+                    }
+                };
+
+                return await stepCtx.PromptAsync(nameof(ChoicePrompt), new PromptOptions
+                {
+                    Prompt = (Activity)MessageFactory.Attachment(listItemsWithIcons2),
+                    Choices = ChoiceFactory.ToChoices(choices),
+                    Style = ListStyle.None
+                }, cancelToken);
+            }
+
+            return await stepCtx.NextAsync(requestDetails.LeadTA, cancelToken);
+        }
+
+        
+
+        private async Task<DialogTurnResult> ConfirmStepAsync(WaterfallStepContext stepCtx, CancellationToken cancelToken)
+        {
+            var requestDetails = (MTCRequestDetail)stepCtx.Options;
+            if (requestDetails.LeadTA == null && stepCtx.Result is FoundChoice)
+            {
+                requestDetails.LeadTA = ((FoundChoice)stepCtx.Result).Value.ToLower();
+            }
+
 
             //var messageText = $"Please confirm: Engagement type: {requestDetails.EngementType}, Location: {requestDetails.Location} Date: {requestDetails.Date}. Is this correct?";
             //var promptMessage = MessageFactory.Text(messageText, messageText, InputHints.ExpectingInput);
@@ -296,7 +363,7 @@ namespace MTCWhoBotPrototype.Dialogs
                 OppId = "no opp",
                 MeetingGoals = "",
                 StartDate = requestDetails.Date,
-                EndDate = Convert.ToDateTime(requestDetails.Date).AddDays(1),
+                EndDate = Convert.ToDateTime(requestDetails.Date).AddDays(1).ToString("yyyy-MM-dd"),
                 EngagementType = requestDetails.EngagementType,
                 EngagementTypes = DalMockHelper.GetEngagementTypes(),
                 MTCLocations = DalMockHelper.GetLocations("all"),
