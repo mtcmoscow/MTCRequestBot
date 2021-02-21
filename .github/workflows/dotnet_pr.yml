@@ -57,6 +57,6 @@ jobs:
       uses: machine-learning-apps/pr-comment@master
       if: ${{ github.event_name == 'pull_request' }}
       env:
-        GITHUB_TOKEN: ${{ secretes.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with: 
         path: ${{ env.file_name }}
