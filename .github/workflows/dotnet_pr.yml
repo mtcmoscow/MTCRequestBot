@@ -3,7 +3,7 @@ name: .NET
 on:
   push:   
     paths:
-      - 'MTCRequestBot/*'
+      - 'MTCRequestBot/**'
       
 jobs:
   build:
