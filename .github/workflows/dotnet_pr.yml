@@ -1,6 +1,11 @@
 name: .NET
 
 on:
+  pull_request:
+    branches: 
+      - master
+    paths:
+      - 'MTCRequestBot/**'
   push:   
     paths:
       - 'MTCRequestBot/**'
