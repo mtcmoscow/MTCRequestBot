@@ -1,7 +1,7 @@
 ﻿
 # MTCRequestBot.Tests
 
-Bot Framework v4 core bot tests sample.
+Bot Framework v4 core bot tests sample. Needs to be updated.
 
 This project uses the [Microsoft.Bot.Builder.Testing](https://www.nuget.org/packages/Microsoft.Bot.Builder.Testing/) package, [XUnit](https://xunit.net/) and [Moq](https://github.com/moq/moq) to create unit tests for the [CoreBot](../13.core-bot) bot.
 
