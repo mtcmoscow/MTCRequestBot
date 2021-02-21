@@ -45,3 +45,10 @@ jobs:
     
     - name: Test
       run: dotnet test --no-build --no-restore --configuration 'Release' --verbosity normal --logger:"liquid.md;LogFileName=${{github.workspace}}/${{env.file_name}};Title=${{env.file_name}};"
+      
+    - name: Upload Report as a Build Artifact
+      uses: actions/upload-artifact@v2
+      if: ${{always()}}
+      with:
+        name: ${{env.file_name}}
+        path: ${{github.workspace}}/${{env.file_name}}
