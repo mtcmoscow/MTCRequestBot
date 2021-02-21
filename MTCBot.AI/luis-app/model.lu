@@ -1,7 +1,7 @@
 
 > LUIS application information
 > !# @app.name = MTCBot Model
-> !# @app.desc = MTCBot model for request and find an expert..
+> !# @app.desc = MTCBot model for request and find an expert...
 > !# @app.versionId = 0.1
 > !# @app.culture = en-us
 > !# @app.luis_schema_version = 6.0.0
@@ -16,17 +16,26 @@
 - cancel booking  
 - exit
 - ignore
+- logout
+- good bye
 
 
 ## MTCRequest
 - i would like to have a strategy briefing in mtc moscow this friday
 - i would like to have a briefing in mtc moscow next monday
-- book an mtc
-- book an mtc in moscow on march 22, 2020
-- book an mtc moscow
-- book mtc moscow
-- book mtc moscow for monday
+- book an microsoft technology center
+- book an mtc in Denver on march 23, 2024
+- book an mtc Philadelphia
+- book mtc Irvine
+- book mtc ny for monday
 - meeting in mtc moscow next monday
+
+# IndustryExpert
+- who can help me with customer in retail industry from united states
+- who can help me with retail industry
+- who knows about healthcare
+- who knows about retail in mtc moscow авфвыа
+- who knows about financial services
 
 > # Entity definitions
 
@@ -100,6 +109,21 @@
 	- St Louis :
 	- Calgary :
 	- Toronto Downtown :
+
+@ list Industry = 
+	- Automotive :
+		- auto
+	- Energy :
+		- oil
+		- gas
+	- Financial Services :
+		- financial
+	- Healthcare :
+	- Manufacturing :
+	- Media :
+		- Communication
+	- Public Sector :
+	- Retail :
 
 > # PREBUILT Entity definitions
 

@@ -13,7 +13,7 @@ namespace MTCRequestBot
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            CreateHostBuilder(args).Build().Run(); // some comment
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
