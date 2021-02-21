@@ -11,7 +11,7 @@ on:
 
 env:
   # Set the name of the master LUIS app
-  LUIS_MASTER_APP_NAME: LUISDevOps-master
+  LUIS_MASTER_APP_NAME: MTCBot-PR
   # If your repository is Private, set this to true
   IS_PRIVATE_REPOSITORY: true
 
@@ -126,6 +126,11 @@ jobs:
         luisEndpointKey: ${{ env.LUISPredictionKey }}
         luisPredictionResourceName: ${{ secrets.AZURE_LUIS_PREDICTION_RESOURCE_NAME }}
         luisIsStaging: false
+        
+    - name: Set PR Build Number
+      id: PRNUMBER
+      if: ${{ github.event_name == 'pull_request' }}
+      uses: kkak10/pr-number-action@v1.3
 
     - name: Analyze Unit test results
       id: analyze_unit_tests
@@ -147,8 +152,9 @@ jobs:
         
     - name: Upload Unit Test Results as a Build Artifact
       uses: actions/upload-artifact@v2
+      if: always()
       with:
-        name: UnitTestResult
+        name: UnitTestResult${{steps.PRNUMBER.outputs.pr}}
         path: unittest/TestResult.xml
 
     # Delete the LUIS app again if we are executing as gate check on a PR
