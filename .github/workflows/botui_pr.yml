@@ -1,4 +1,4 @@
-name: .NET
+name: Bot UI PR
 
 on:
   pull_request:
