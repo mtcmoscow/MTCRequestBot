@@ -1,6 +1,8 @@
 # MTCRequestBot
 
-Bot Framework v4 core bot sample. Add PR quality check. 
+Bot Framework v4 core bot sample. 
+  - Add PR quality check. 
+  - Add Unit Test Result as a PR comment.
 
 This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to:
 
