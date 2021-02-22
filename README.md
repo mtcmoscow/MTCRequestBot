@@ -2,9 +2,8 @@
 My experiment
 
 Added ARM Template deployment via GitHub Actions
-
 https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-deploy-az-cli?view=azure-bot-service-4.0&tabs=csharp
-
+https://www.wesleyhaakman.org/working-with-pull-requests-status-checks-arm-templates-and-github-actions/
 
 IaaC
 Microsoft.Web/serverfarms
@@ -18,3 +17,8 @@ Microsoft.CognitiveServices/accounts
 	"kind": "LUIS“
 	"kind": "LUIS.Authoring"
 	"kind": "TextTranslation"
+	
+	
+
+Status check with path filter
+https://github.community/t/status-check-with-path-filter/18049/8
