@@ -22,6 +22,8 @@ Microsoft.CognitiveServices/accounts
 	- "kind": "LUIS“
 	- "kind": "LUIS.Authoring"
 	- "kind": "TextTranslation"
+
+test cicd
 	
 	
 
