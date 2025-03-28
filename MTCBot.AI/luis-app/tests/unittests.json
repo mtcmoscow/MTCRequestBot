@@ -32,7 +32,7 @@
     ]
   },  
   {
-    "text": "meeting in mtc moscow next monday",
+    "text": "meeting in mtc moscow on friday",
     "intent": "MTCRequest",
     "entities": [
       {
@@ -41,7 +41,7 @@
       },      
       {
         "entityType": "datetimeV2",        
-        "matchText": "next monday"
+        "matchText": "friday"
       }
     ]
   }
